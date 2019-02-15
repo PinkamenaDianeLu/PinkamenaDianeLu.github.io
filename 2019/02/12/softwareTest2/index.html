@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">2.2k</span>阅读时长: <span class="post-count reading-time">7 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">4.9k</span>阅读时长: <span class="post-count reading-time">16 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -453,7 +453,49 @@ height:50vh;
 <h1 id="开发中测试"><a href="#开发中测试" class="headerlink" title="开发中测试"></a>开发中测试</h1><p>在初始的测试用例编写完毕之后，开发前的所有准备工作也就基本准备就绪了，开发中这段时间每天都可能会出现大量的问题，或者伴随着需求的修改对功能进行重做然后带出更多的问题，那么一个详细的测试流程必不可少</p>
 <p><img src="https://i.imgur.com/FwtropZ.png" alt=""></p>
 <h2 id="每日测试"><a href="#每日测试" class="headerlink" title="每日测试"></a>每日测试</h2><p>随着项目的进展项目型测试人员已经可是开始跟随团队测试进展了，这时项目的问题属于自己内部消化的阶段<em>详细流程请看项目型测试部分</em>，这是项目开始时的每日日常，但是随着项目的进展问题可能越发变少，甚至到了有一定难度的模块时候可能会出现一定的怠惰现象，即测试人员认为没什么好测的开发还没有新功能的进展，到了这段时间因鼓励进行回归测试，关于回归测试将在后面描述</p>
-<h2 id="阶段测试"><a href="#阶段测试" class="headerlink" title="阶段测试"></a>阶段测试</h2><h1 id="开发末期测试"><a href="#开发末期测试" class="headerlink" title="开发末期测试"></a>开发末期测试</h1><h1 id="发布后"><a href="#发布后" class="headerlink" title="发布后"></a>发布后</h1>
+<h2 id="阶段测试"><a href="#阶段测试" class="headerlink" title="阶段测试"></a>阶段测试</h2><p>随着时间的进展，项目已经有了一定的进度，此时虽然模块还没有构建完整但是已经有了一些可以联系的功能点，此时就可以开始让功能型测试人员进行小型的阶段性测试了</p>
+<p>阶段性测试本质上就是第三方的每日测试，它将用另一种眼光来看待程序并发现问题，两者使用的测试用例相辅相成，这种阶段性测试的测试时间是不确定的也是不规律的，它将在项目的任何阶段出现，以模块式抽样的方式检查项目</p>
+<h2 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h2><p>到了一定时间，项目终于可以成立一个单独的模块了，那么就可以开始进行单元测试了。单元测试可以说是测试环节中最重要的部分，测试人员要在熟悉业务的情况下对模块进行灰盒测试，在这时功能的实现与代码质量同样重要，如果单元测试留下缺陷那么很可能影响整个项目的进展。</p>
+<p>在开发过程中经常出现单独模块可以运行但是模块之间难以对接，或是由于某个模块质量太差而导致数据难以流通、系统卡顿等现象，这大多都是由于开发人员只顾及自己的代码块而忽视他人或是个人能力有关，这是敏捷式软件开发中是不可避免的，这时就需要严谨的单元测试来纠正这一问题。</p>
+<p>在测试过程中需要有项目经理或组长的参与，他将协助测试人员从代码和业务方面同时考核模块。单独的开发人员不一定明确自己模块的目的及走向（<em>即使我们希望他知道</em>），所以我们需要一个领导全局的人对对应模块进行检查。</p>
+<p>我们将在功能质量和数据质量上检查问题，事实上如果每日测试和单元测试都进展的非常顺利的话在功能上使不会出现什么问题的，那么这里应主要观察数据库中的数据质量</p>
+<blockquote>
+<p>数据是程序的血液</p>
+</blockquote>
+<p>在程序中模块的联通主要是数据的联通，标准的数据格式非常重要，虽然在设计的初始阶段就已经有所设计但是在开发过程中还是会出现各种参差不齐的数据，在模块测试中要尽量找出这些问题并加以改正，更改数据结构并严格要求数据质量可能对程序员来说是件难受的事情，但是我们必须严格要求此处</p>
+<h2 id="集成测试"><a href="#集成测试" class="headerlink" title="集成测试"></a>集成测试</h2><p>相对于模块测试，集成测试更将倾向于整个项目的质量。不同的模块即使再理想在连接时也有可能出现不可预料的情况。集成测试不同于之后的系统测试，集成测试同样注重于数据结构与功能完整，它相当于一个功能联调，之前运行的越顺利再此将越轻松</p>
+<h2 id="系统测试"><a href="#系统测试" class="headerlink" title="系统测试"></a>系统测试</h2><p>在一定阶段后已经形成了系统基本雏形，任何人或组织都不可能完全的的测试一个系统，虽然之前经过了很多精密的测试但是在这里依然可能出现不可预料的情况。<br>系统测试更注重于程序的速度、数据质量、还有代码质量已经程序的运行条件。</p>
+<p>这时的系统运行已经开始接近实际使用，但软件仍然处于开发过程中，所以系统测试常常能测试出很多意想不到的问题并牵连出很多新问题，所以说这里可能是开发环节也是测试环节中最艰难的一步，期间将充斥着大量的修改跟回归测试，并抛弃一部分测试用例并编写新的，但是完成后我们将得到一个拥有优秀结构的产品和一个有详细情况分析的文档。</p>
+<p>这期间还要进行冒烟测试，验证程序的稳定性，这点将在上线后显得非常重要，事实上客户对程度的满意程度并不是开发者使用了多么强大的技术或是多么新颖的设计（虽然也很重要），他们只是更想要的是一个简单易用，稳定且能满足需求的系统。</p>
+<h2 id="用户测试"><a href="#用户测试" class="headerlink" title="用户测试"></a>用户测试</h2><p>虽然上图括号中写的是验收测试，但是这个验收并不是指要钱的那个验收，而是自己项目组对自己的“验收”。</p>
+<p>在这阶段我们主要进行GUI测试，即测试软件界面交互和对用户的亲和程度。所有的程序都有可能带有功能性问题，因为软件的设计是不可能满足所有人的，但是我们要以一下三点考量：</p>
+<ol>
+<li>交流性：如何明白程序的使用方法，当不同输入后提示什么信息，信息是否有用？是否错误？</li>
+<li>结构性：程序的流程和结构是否令人糊涂？是否有指令容易与其它指令混淆？</li>
+<li>输出：为用户输出的内容是否简单易懂？程序的打印内容是否有意义？用户能看的懂你的最终结果吗？</li>
+</ol>
+<p>事实上如果程序满足了以上三点，并且稳定、高效，那么他就是一个领用户满意的软件。在现在，简单易懂的软件比功能强大的软件更受到用户满意（在统计中，简单易懂的mysql快速占领的市场现已为世界上排名第二的数据库，并有赶超oracle的趋势）</p>
+<p>下图是数据库用户流向示意图<br><img src="https://i.imgur.com/acGX8Jd.jpg" alt=""></p>
+<p>除了GUI测试，模拟实际工作情况也是非常重要的，软件的使命即是完成任务，所以这里要根据之前的需求文档仔细测试需求流程，再此之上还有预想各种可能情况来完成任务，这里需要有经验的测试人员和一些并不了解程序的模拟客户共同测试，查看他们的反馈结果来针对性的更改问题。</p>
+<h1 id="开发末期测试"><a href="#开发末期测试" class="headerlink" title="开发末期测试"></a>开发末期测试</h1><p>好了，到了这个时候项目开发已经接近尾声，我方已大致完成了工作内容，那么要开始考虑的便是我们之外的因素了。</p>
+<p>在生产环境我们将面临各式各样非软件带来的问题，和与不同公司的对接，我们要做好万全的准备</p>
+<h2 id="灾备测试"><a href="#灾备测试" class="headerlink" title="灾备测试"></a>灾备测试</h2><p>之前说过，数据是程序的血液，那么血液被抽空了会怎样呢？我想这个程序也就成了一具“干尸”了。所以说数据的备份对发布后的程序来说至关重要。</p>
+<blockquote>
+<p>常备份，备多份，有事没事先备份</p>
+</blockquote>
+<p>备份的重要再此不用多提，我们主要测试的是在灾难过后我们通过备份恢复后对系统的影响有多大，测试时可以考虑做一些认为破坏或丢失数据的情况，来评估数据损坏后的影响，备份不一定总是可靠的，我们需要知道程序的“命门”所在</p>
+<h2 id="对接测试"><a href="#对接测试" class="headerlink" title="对接测试"></a>对接测试</h2><p>很多事后一个系统并不是我们团队单独完成，很多数据都有可能是由第三方提供，我们可能使用接口、协议等多种方式处理和获取数据，那么在这里我们就要测试与第三方联调的结果<br>第三方也并不总是可靠的，我们除了保证数据联通、协调以外还要评估一旦其失效所带来的后果并做一定的处理</p>
+<h2 id="环境预估"><a href="#环境预估" class="headerlink" title="环境预估"></a>环境预估</h2><p>实际部署环境很可能跟我们预料的不同，我们需要提前考察并评估生产环境是，机房、服务器、数据库、存储、操作系统等，都可能是影响程序的突然因素，在部署前对硬件设施的考察和准备工作必不可缺。</p>
+<p>假如服务器突然宕机怎么办，假如需要快速再部署怎么办，假如数据存储找不到或被清空怎么办，对这些需要折磨运维人员的问题都要有提前的预估和准备。</p>
+<h2 id="紧急预案"><a href="#紧急预案" class="headerlink" title="紧急预案"></a>紧急预案</h2><p>程序有很多种可能会发生突然宕机的情况，这里就需要我们的运维人员来快速的解决问题，用户的满意度有70%以上取决于我们对他们的态度，虽然我们无法预料所有问题发生的可能性，但是还是要制定一份紧急预案来表达我们解决突发情况的能力与态度。</p>
+<p>这份预案并不是花瓶，它将在公司内部起到一定的公信力，详细的安排和制度能有效的在半夜把运维工程师叫到机房去。</p>
+<h1 id="发布后"><a href="#发布后" class="headerlink" title="发布后"></a>发布后</h1><p>在不懈努力下我们终于将我们的作品发布，然后在这之后，尤其是刚上线的一个月，各种各样的问题将接踵而至，这时要求团队高效、准确的处理问题。那么这时测试工程师就很难时时的发挥作用，如此高效的迭代下是没有时间进行流程性的测试的。</p>
+<p>在这时要求开发者对问题进行记录，这里包括时间、模块、修改人、修改点，等详细资料以供之后进行测试和评估。在实际工作中这些东西很可能会被边缘化直至忽略，所以就要求开发人员有一定的自觉和文档填写能力。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>即使我们测试工作再顺利，我们也不可能完全的测试一个程序，在<em>《软件维护》1983 P.24</em> 中<em>Zelkowita、Shaw</em>和<em>ZGannon</em>在1979年总结并报告了每个开发阶段的相对费用。如下所示：</p>
+<p><img src="https://i.imgur.com/FX4dK6W.png" alt=""></p>
+<p>可见软件测试对于一个项目的重要性，它将极大的增加客户满意度并减少之后的运维成本，并为一个公司带来很多正面评价。</p>
+<p>在之后的文档中我将介绍：软件测试的基本方法、测试人员与开发人员的合作、测试思想等，争取形成一个完整的软件测试体系。</p>
+
     </article>
     <!-- license  -->
     
@@ -461,7 +503,7 @@ height:50vh;
             <p>原文作者：<a href="https://pinkamenadianelu.github.io">Mrlu</a>
             </p><p>原文链接：<a href="https://pinkamenadianelu.github.io/2019/02/12/softwareTest2/">https://pinkamenadianelu.github.io/2019/02/12/softwareTest2/</a>
             </p><p>发表日期：<a href="https://pinkamenadianelu.github.io/2019/02/12/softwareTest2/">February 12th 2019, 10:53:08 am</a>
-            </p><p>更新日期：<a href="https://pinkamenadianelu.github.io/2019/02/12/softwareTest2/">February 14th 2019, 11:05:26 am</a>
+            </p><p>更新日期：<a href="https://pinkamenadianelu.github.io/2019/02/12/softwareTest2/">February 15th 2019, 4:05:32 pm</a>
             </p><p>版权声明：我这属实是没啥版权，看个开心就行</p>
         </div>
     
@@ -600,7 +642,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text"> 软件测试 —— 测试基本流程 </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#需求评审"><span class="toc-number">2.</span> <span class="toc-text">需求评审</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#人员指派"><span class="toc-number">3.</span> <span class="toc-text">人员指派</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#项目型测试"><span class="toc-number">3.1.</span> <span class="toc-text">项目型测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#职能型测试"><span class="toc-number">3.2.</span> <span class="toc-text">职能型测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#评审会议"><span class="toc-number">3.3.</span> <span class="toc-text">评审会议</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#任务分配"><span class="toc-number">4.</span> <span class="toc-text">任务分配</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#高耦合性工作"><span class="toc-number">4.1.</span> <span class="toc-text">高耦合性工作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试用例"><span class="toc-number">5.</span> <span class="toc-text">测试用例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开发中测试"><span class="toc-number">6.</span> <span class="toc-text">开发中测试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#每日测试"><span class="toc-number">6.1.</span> <span class="toc-text">每日测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#阶段测试"><span class="toc-number">6.2.</span> <span class="toc-text">阶段测试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开发末期测试"><span class="toc-number">7.</span> <span class="toc-text">开发末期测试</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#发布后"><span class="toc-number">8.</span> <span class="toc-text">发布后</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text"> 软件测试 —— 测试基本流程 </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#需求评审"><span class="toc-number">2.</span> <span class="toc-text">需求评审</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#人员指派"><span class="toc-number">3.</span> <span class="toc-text">人员指派</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#项目型测试"><span class="toc-number">3.1.</span> <span class="toc-text">项目型测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#职能型测试"><span class="toc-number">3.2.</span> <span class="toc-text">职能型测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#评审会议"><span class="toc-number">3.3.</span> <span class="toc-text">评审会议</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#任务分配"><span class="toc-number">4.</span> <span class="toc-text">任务分配</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#高耦合性工作"><span class="toc-number">4.1.</span> <span class="toc-text">高耦合性工作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试用例"><span class="toc-number">5.</span> <span class="toc-text">测试用例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开发中测试"><span class="toc-number">6.</span> <span class="toc-text">开发中测试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#每日测试"><span class="toc-number">6.1.</span> <span class="toc-text">每日测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#阶段测试"><span class="toc-number">6.2.</span> <span class="toc-text">阶段测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#单元测试"><span class="toc-number">6.3.</span> <span class="toc-text">单元测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#集成测试"><span class="toc-number">6.4.</span> <span class="toc-text">集成测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#系统测试"><span class="toc-number">6.5.</span> <span class="toc-text">系统测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户测试"><span class="toc-number">6.6.</span> <span class="toc-text">用户测试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开发末期测试"><span class="toc-number">7.</span> <span class="toc-text">开发末期测试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#灾备测试"><span class="toc-number">7.1.</span> <span class="toc-text">灾备测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对接测试"><span class="toc-number">7.2.</span> <span class="toc-text">对接测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境预估"><span class="toc-number">7.3.</span> <span class="toc-text">环境预估</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#紧急预案"><span class="toc-number">7.4.</span> <span class="toc-text">紧急预案</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#发布后"><span class="toc-number">8.</span> <span class="toc-text">发布后</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">9.</span> <span class="toc-text">总结</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -640,9 +682,20 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 3
+        Total : 4
         </div>
         <!-- search  -->
         
@@ -669,6 +722,11 @@ top:50vh;
     
         <li class="archive-post-item">
             <span class="archive-post-date">01/24</span><a class="archive-post-title" href="/2019/01/24/skm/">微信收款码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/24</span><a class="archive-post-title" href="/2019/01/24/skm2/">支付宝收款码</a>
         </li>
     
     </ul></div>
