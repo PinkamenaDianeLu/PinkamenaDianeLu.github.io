@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">3k</span>阅读时长: <span class="post-count reading-time">10 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">5.5k</span>阅读时长: <span class="post-count reading-time">18 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -401,7 +401,7 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="软件测试————测试的基本方法"><a href="#软件测试————测试的基本方法" class="headerlink" title="软件测试————测试的基本方法"></a>软件测试————测试的基本方法</h1><p>归根到底，一个测试工程师还是应该掌握一定的测试方法来与自己的经验相辅相成。软件测试相比于开发者拥有更大的广度而更浅的深度。想顺利的进行软件测试跟程序开发者的配合是密不可分的，但是在这里我只介绍软件测试人员本身的一些简单方法，而配合部分将会在之后的文章中写出。</p>
+        <h1 id="软件测试——测试的基本方法"><a href="#软件测试——测试的基本方法" class="headerlink" title="软件测试——测试的基本方法"></a>软件测试——测试的基本方法</h1><p>归根到底，一个测试工程师还是应该掌握一定的测试方法来与自己的经验相辅相成。软件测试相比于开发者拥有更大的广度而更浅的深度。想顺利的进行软件测试跟程序开发者的配合是密不可分的，但是在这里我只介绍软件测试人员本身的一些简单方法，而配合部分将会在之后的文章中写出。</p>
 <p>编程语言成千上万，测试方法也是。每种手法见仁见智但是核心思想大同小异，所以在介绍详细的测试方法之前我会先介绍测试的一些思想和目标，从而帮助更好的理解各种手法。</p>
 <h1 id="测试人员的目标"><a href="#测试人员的目标" class="headerlink" title="测试人员的目标"></a>测试人员的目标</h1><p>在开始软件测试之前，测试人员应该明白自己应做什么,一个明确的目标是一个不错的开始，这将帮助测试工程师能过更好的了解自己明确目的，从而更加高效的完成工作。</p>
 <p>首先我们要明确一点</p>
@@ -434,13 +434,13 @@ height:50vh;
 <h3>可重现问题</h3>
 
 <p>非常幸运，我们碰到的问题显而易见且可供重现，这时如果你写下，xxx功能我xxx结果xxx，不符合预期。那么这肯定不是一份合格的报告，甚至可以说你甚至没有做到一名测试人员应做的事。</p>
-<p>1.问题关联</p>
+<p><strong>1.问题关联</strong></p>
 <p>问题的出现可能是千奇百怪，但是我们除了要记录下问题还要找到问题的原因、后果、和解决方案。例如，我们在一个输入框中输入了一串身份账号要求自动计算年龄，那么这个年龄是周岁还是虚岁，是否计算年龄，而此时需求文档又没有详细的说明，那你要做的可不是就单单写个错误或是随便过了，而是去找需求人员认真核实这个问题并且思考其它需要此功能的地方是否也存在类似的问题或是不同的处理方式。然后再去写一份负责的测试报告。</p>
-<p>2.寻找关键步骤</p>
+<p><strong>2.寻找关键步骤</strong></p>
 <p>当你发现一个缺陷时，你所看见的只是现象，并不是根源。程序的不正常现象是由代码中的错误所导致的结果，由于你看不到代码，因此你也看不到错误本身，你所看到的只是程序运行不正常。根本的错误也许在很多步骤前就已经发生了。所以当我们执行每一步时应仔细地查找有关错误的任何线索。不太重要的提示常常被遗失或忽略。细微的缺陷很可能是某个错误的最初表现，这个错误最终会暴露自己，成为你关注的问题</p>
-<p>3.最大程度地提高程序运行的可见性</p>
+<p><strong>3.最大程度地提高程序运行的可见性</strong></p>
 <p>你能将程序运行的越多方面变得可见，就越能看到更多的出错情况，也就越有可能明确关键的步骤。这时就应该开始考虑使用源代码调试工具，如果我们能够准确的看到某个代码块的处理问题那么我就更能够从而找出更多的问题，这里对代码的跟踪只要注重于功能方面即可。</p>
-<p>4.查找后续错误</p>
+<p><strong>4.查找后续错误</strong></p>
 <p>即使你还没找到最关键步骤，一旦发现了某个缺陷，也应该再坚持运行程序一段时间，看看是否会有其它的错误出现。你要认真仔细的做这件事。最初出现的问题可能会诱发出一些列后续的问题。一旦最初的问题得到高正，后面的问题可能就不会出现了。从一方面这种因果关系也并不是确定的，你必须从某个已知且清楚的状态出发，沿一条不会触发原有问题的路径对这些错误分别进行测试</p>
 <h3>无法重现问题</h3>
 
@@ -454,18 +454,18 @@ height:50vh;
 <h3>问题报告的特点</h3>
 
 <p>一份好的问题报告应该是书面的、已编号的、简单的、易于理解的、可重现的和不做判断的。</p>
-<p>1.书面的</p>
+<p><strong>1.书面的</strong></p>
 <p>之前一段时间使用的测试报告很多都以口头、excel、微信或其他非正式、不可追踪的方式来报告问题的。不要这么做，不然很多细节（或是整个问题）都会被遗忘掉。即使程序员马上进行了改正，你还是需要一份报告供然后对修改后的程序进行测试</p>
-<p>2.已编号的</p>
+<p><strong>2.已编号的</strong></p>
 <p>应根据编号追踪问题报告。为每份报告设置一个唯一的编号</p>
-<p>3.简单的</p>
+<p><strong>3.简单的</strong></p>
 <p>一份报告应该只描述一个问题，如果找到了五个似乎相互关联的问题，就写五分报告分别描述他们，当然也可以在五分报告中互相较差引用。</p>
 <p>当一份报告记录多个问题总会产生麻烦。程序员可能可能会只修改一部分问题，或者有部分缺陷没有改正就会被标注已改正，这会带来混乱。而且如果将五分报告同意塞到一起，处理起来也好像是一个艰巨的任务。</p>
-<p>4.易于理解的</p>
+<p><strong>4.易于理解的</strong></p>
 <p>报告越容易理解，程序员就越有可能处理它们，描写的简单易懂会事半功倍</p>
-<p>5.<strong>可重现的</strong></p>
+<p><strong>5.※ 可重现的 </strong></p>
 <p>详细记录时如何发现一个缺陷的，这点可以说是问题报告的核心内容。如果你知道一个缺陷，你的报告就必须叙述清晰，一步一步地说明程序员应该怎样做才能看到它。如果你不知道如何重现，那就在报告中直说好了。</p>
-<p>6.不做判断的</p>
+<p><strong>6.不做判断的</strong></p>
 <p>没人喜欢被认教训对错，但是作为测试成员我们不得不每天都这样做。在我们填写报告单的时候不要带有任何个人感情色彩，如果写的报告纯属是个人报复，那么他就会无视你的报告并且对你说<em>NM$L</em></p>
 <p>在填写一份报告前除了要整理清晰的语言，还要保证它公平客观，谨慎严谨。一份严谨端庄的报告可能会减少一个问题所给两者带来的矛盾</p>
 <h3>问题报告的要素</h3>
@@ -473,7 +473,88 @@ height:50vh;
 <p><img src="https://i.imgur.com/FI9JHQh.png" alt=""><img src="https://i.imgur.com/2N36tlM.png" alt=""></p>
 <p>这里是我个人拟定的一份测试报告单与反馈单。现在有很多的管理系统都可以做到自动产生报告交流，但是无论哪个系统我认为都应该满足以上图片中的要素。其内容在不同系统可能有不同表达，再此不做赘述。所选用的软件或系统大多由部门经理制定。</p>
 <p>有必要的话，可以自行开发程序达成目标。</p>
-<h1 id="软件质量"><a href="#软件质量" class="headerlink" title="软件质量"></a>软件质量</h1><h1 id="测试方法"><a href="#测试方法" class="headerlink" title="测试方法"></a>测试方法</h1><h1 id="测试用例"><a href="#测试用例" class="headerlink" title="测试用例"></a>测试用例</h1><h1 id="交互测试"><a href="#交互测试" class="headerlink" title="交互测试"></a>交互测试</h1>
+<h1 id="软件质量"><a href="#软件质量" class="headerlink" title="软件质量"></a>软件质量</h1><p>首先我们要明确一点，什么是软件质量。举个例子，你去家具城买了把椅子，这个椅子真皮包裹钛合金骨架诺基亚生产，一切看起来那么完美，但是椅子中间有个大洞，店家告诉你这椅子设计就是这样的。那么问题来了，这把椅子的质量如何？</p>
+<p>我想这椅子质量再好你也不会买它，因为他满足不了椅子应该完成的使命，所以软件也是一样</p>
+<blockquote>
+<p>对于客户来说，如果该产品他不喜欢，它的质量就是不好</p>
+</blockquote>
+<p>东京理工大学教授<em>狩野纪昭(Noriaki Kano)</em>提出的卡诺模型能够更好的体现这个问题<br><img src="https://i.imgur.com/98RuaSF.jpg" alt=""></p>
+<blockquote><p>“一个实体的所有特性，基于这些特性可以满足明显的或隐含的需求。而质量就是实体基于这些特性满足需求的程度”</p>
+<footer><strong>质量的定义</strong><cite>ISO</cite></footer></blockquote>
+<p>大多数的软件开发者都不会遇到这样具备专业知识且表达准确的客户。对于他们而言，衡量其产品质量和服务的标准，就是其客户满意程度，而不是符合某个规格说明。可靠性是质量的一个方面。程序越可靠，在客户尝试使用它时发生故障的频率也就越低，任何故障造成的后果也越轻。可靠性固然重要，但是测试人员如果声称“质量就是可靠性”，那也是不正确的。如果程序无法做客户想用它做的事情，客户就不会高兴，那它的质量也不会高。</p>
+<p>简单的说，一个程序的质量取决于：</p>
+<ul>
+<li>促使客户愿意使用的程序的特性</li>
+<li>测试客户产生“还不如买其它产品”这样的念头的程序缺陷</li>
+</ul>
+<p>所以作为一名测试人员，我们就要减少程序中的设计缺陷来提高客户满意度，我们不仅要满足客户提出显示需求还要了解客户的隐形需求。</p>
+<h2 id="ISO-9126"><a href="#ISO-9126" class="headerlink" title="ISO 9126"></a>ISO 9126</h2><p>ISO 9126软件质量模型是评价软件质量的国际标准，由6个特性和27个子特性组成。也是一个合格软件应该达成的质量指标<br><img src="https://i.imgur.com/aNlKpY5.jpg" alt=""></p>
+<p>功能性</p>
+<ul>
+<li>适合性：当软件在指定条件下使用，其满足明确和隐含要求功能的能力。</li>
+<li>准确性：软件提供给用户功能的精确度是否符合目标。</li>
+<li>互操作性：软件与其它系统进行交互的能力。</li>
+<li>安全性：软件保护信息和数据的安全能力。</li>
+</ul>
+<p>可靠性</p>
+<ul>
+<li>成熟性：软件产品避免因软件中错误发生而导致失效的能力。</li>
+<li>容错性：软件防止外部接口错误扩散而导致系统失效的能力。</li>
+<li>可恢复性：系统失效后，重新恢复原有的功能和性能的能力。</li>
+</ul>
+<p>易用性</p>
+<ul>
+<li>易理解性：软件显示的信息要清晰、准确且易懂，使用户能够快速理解软件。</li>
+<li>易学习性：软件使用户能学习其应用的能力。</li>
+<li>易操作性：软件产品使用户能易于操作和控制它的能力。</li>
+<li>吸引性：软件具有的某些独特的、能让用户眼前一亮的属性。</li>
+</ul>
+<p>效率</p>
+<ul>
+<li>时间特性：在规定的条件下，软件产品执行其功能时能够提供适当的响应时间和处理时间以及吞吐率的能力。</li>
+<li>资源利用：软件系统在完成用户指定的业务请求所消耗的系统资源，诸如CPU占有率、内存占有率、网络带宽占有率等。</li>
+</ul>
+<p>可维护性</p>
+<ul>
+<li>易分析性：软件提供辅助手段帮助开发人员定位缺陷原因并判断出修改之处。</li>
+<li>易改变性：软件产品使得指定的修改容易实现的能力。</li>
+<li>稳定性：软件产品避免由于软件修改而造成意外结果的能力。</li>
+<li>易测试性：软件提供辅助性手段帮助测试人员实现其测试意图。</li>
+</ul>
+<p>可移植性</p>
+<ul>
+<li>适应性：软件产品无需做任何相应变动就能适应不同运行环境的能力。</li>
+<li>易安装性：在平台变化后，成功安装软件的难易程度。</li>
+<li>共存性：软件产品在公共环境与其共享资源的其他系统共存的能力。</li>
+<li>替换性：软件系统的升级能力，包括在线升级、打补丁升级等。<h1 id="测试方法"><a href="#测试方法" class="headerlink" title="测试方法"></a>测试方法</h1>假如你仔细的读到这里，可能会对软件测试有了一定认识。对于软件测试的方法我想心中也模糊有个印象，事实上任何一本书后者文档都不会明确的写出什么是软件测试的方法，如果硬要说的话就是：</li>
+</ul>
+<blockquote>
+<p>用一切手段找出软件的任何缺陷，包括未出现的</p>
+</blockquote>
+<p>此处将讲解软件测试的各种类型，以便测试人员多一些“手段”</p>
+<h2 id="结构测试与功能测试"><a href="#结构测试与功能测试" class="headerlink" title="结构测试与功能测试"></a>结构测试与功能测试</h2><p>结构测试属于白盒测试，而功能测试属于黑盒测试的一种，尽管白盒测试已经成了很广泛的理论分析对象，也有了很多测试工具，但是大多数进行的测试依然是黑盒的。</p>
+<h2 id="增长测试"><a href="#增长测试" class="headerlink" title="增长测试"></a>增长测试</h2><p>根据增长测试策略，首先对程序的每个小部分进行单独测试。对过程或程序的单个小部分的测试成为模块测试、单元测试或部件测试。增长测试很容易确定错误发生的原因。当只测试一个模块的时，所有的错误要么在这个模块内，要么在测试程序中，无需考察更多的代码就可以定位问题。</p>
+<h2 id="静态测试"><a href="#静态测试" class="headerlink" title="静态测试"></a>静态测试</h2><p>静态测试说白了就是只使用眼睛看，分析代码而不执行代码。当然这一测试并不是全靠人眼完成的，更多的是依靠一些测试工具。当然了，代码阅读也是一件重要的事情，就是判断对于阅读人员而言代码是否有意义，程序是否简单易懂，代码是否符合规范</p>
+<blockquote>
+<p>程序员即是代码的开发者，也是代码的使用者</p>
+</blockquote>
+<h2 id="动态测试"><a href="#动态测试" class="headerlink" title="动态测试"></a>动态测试</h2><p><strong>1.集成测试</strong></p>
+<p>集成测试是指一个应用系统的各个部件的联合测试，以决定它们能否在一起共同工作并没有冲突。集成测试是单元测试的逻辑扩展。它的最简单的形式是：两个已经测试过的单元组合成一个组件，并且测试它们之间的接口。从这一层意义上讲，组件是指多个单元的集成聚合。</p>
+<p><strong>2.系统测试</strong><br>系统测试是基于系统整体需求说明书的黑盒类测试，应覆盖系统所有联合的部件。系统测试是针对整个产品系统进行的测试，目的是验证系统是否满足了需求规格的定义，找出与需求规格不相符合或与之矛盾的地方。</p>
+<p><strong>3.End to End Testing</strong></p>
+<p>顾名思义，即是端口到端口测试，测试各个部位的链接情况，如服务器到数据库，数据库到存储，服务到接口</p>
+<p><strong>4.性能测试</strong></p>
+<p>性能可以通过黑盒或白盒的方法来测试。使用白盒测试分析可以更细致些，因为你可以使用模拟器或一些测试工具来研究程序运行特定模块、按照指定路径执行处理特定数据花费的时间。性能测试的目标之一是为了提高性能。测试要判断出哪些模块执行得最多或占用的时间最多。这些模块将被重新检查、编写以遍运行的更快。</p>
+<p><strong>5.回归测试</strong></p>
+<p>回归测试是测试人员常做的基本工作，即使将存在过的错误再测试一遍。这种测试将贯穿着整个项目开发过程，一旦程序发生了变化就应该马上开始回归测试。这也反映出了代码修改对最新变化的“脆弱性”。</p>
+<h2 id="可用性测试"><a href="#可用性测试" class="headerlink" title="可用性测试"></a>可用性测试</h2><p>模拟用户，研究他们是怎么使用产品的，甚至可以是一部分真实情况的模拟，测试的越多越能暴露设计问题，从而提升软件的满意度</p>
+<h2 id="边界条件测试"><a href="#边界条件测试" class="headerlink" title="边界条件测试"></a>边界条件测试</h2><p>检查所有程序对边界值的响应，向程序输入迫使其输出边界值数据（边界值：一次输入的上下限）</p>
+<h2 id="背景测试"><a href="#背景测试" class="headerlink" title="背景测试"></a>背景测试</h2><p>在一个多重处理的系统里，程序如何完成多个任务的处理呢，假如两个人同时更改一段数据，或是先后顺序不同，都会发生什么呢</p>
+<h2 id="错误恢复测试"><a href="#错误恢复测试" class="headerlink" title="错误恢复测试"></a>错误恢复测试</h2><p>详情见前文——灾备测试————&gt; </p>
+<p><a href="https://pinkamenadianelu.github.io/2019/02/12/softwareTest2/#%E7%81%BE%E5%A4%87%E6%B5%8B%E8%AF%95">https://pinkamenadianelu.github.io/2019/02/12/softwareTest2/#%E7%81%BE%E5%A4%87%E6%B5%8B%E8%AF%95</a></p>
+<h2 id="Quicky演示测试"><a href="#Quicky演示测试" class="headerlink" title="Quicky演示测试"></a>Quicky演示测试</h2><p>快速演示测试，旨在给他人演示项目时保证其不出意外，能够帮助产品在讲解时不尴尬，此测试旨在能够不出意外的完成系统的核心功能</p>
+<h1 id="交互测试"><a href="#交互测试" class="headerlink" title="交互测试"></a>交互测试</h1><p>软件漂亮的的页面、新颖的设计、温馨的提示，都将为软件加分不少，在现在社会GUI的成败已经可以说是一个软件产品至关重要的一环了（即使linux如此强大其市场占有率依然不如window，诚然linux是服务器用系统，但是假如现在家家户户用的都是linux，谁又晓得有没有公司推出  XXXXLinux——个人版呢）</p>
+
     </article>
     <!-- license  -->
     
@@ -481,7 +562,7 @@ height:50vh;
             <p>原文作者：<a href="https://pinkamenadianelu.github.io">Mrlu</a>
             </p><p>原文链接：<a href="https://pinkamenadianelu.github.io/2019/02/15/softwareTesting3/">https://pinkamenadianelu.github.io/2019/02/15/softwareTesting3/</a>
             </p><p>发表日期：<a href="https://pinkamenadianelu.github.io/2019/02/15/softwareTesting3/">February 15th 2019, 10:04:59 pm</a>
-            </p><p>更新日期：<a href="https://pinkamenadianelu.github.io/2019/02/15/softwareTesting3/">February 16th 2019, 4:19:08 pm</a>
+            </p><p>更新日期：<a href="https://pinkamenadianelu.github.io/2019/02/15/softwareTesting3/">February 16th 2019, 11:25:05 pm</a>
             </p><p>版权声明：我这属实是没啥版权，看个开心就行</p>
         </div>
     
@@ -620,7 +701,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#软件测试————测试的基本方法"><span class="toc-number">1.</span> <span class="toc-text">软件测试————测试的基本方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试人员的目标"><span class="toc-number">2.</span> <span class="toc-text">测试人员的目标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试人员的分析与报告能力"><span class="toc-number">3.</span> <span class="toc-text">测试人员的分析与报告能力</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#分析"><span class="toc-number">3.1.</span> <span class="toc-text">分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.1.</span> <span class="toc-text">可重现问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.2.</span> <span class="toc-text">无法重现问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#报告"><span class="toc-number">3.2.</span> <span class="toc-text">报告</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.1.</span> <span class="toc-text">问题报告的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.2.</span> <span class="toc-text">问题报告的要素</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#软件质量"><span class="toc-number">4.</span> <span class="toc-text">软件质量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试方法"><span class="toc-number">5.</span> <span class="toc-text">测试方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试用例"><span class="toc-number">6.</span> <span class="toc-text">测试用例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#交互测试"><span class="toc-number">7.</span> <span class="toc-text">交互测试</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#软件测试——测试的基本方法"><span class="toc-number">1.</span> <span class="toc-text">软件测试——测试的基本方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试人员的目标"><span class="toc-number">2.</span> <span class="toc-text">测试人员的目标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试人员的分析与报告能力"><span class="toc-number">3.</span> <span class="toc-text">测试人员的分析与报告能力</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#分析"><span class="toc-number">3.1.</span> <span class="toc-text">分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.1.</span> <span class="toc-text">可重现问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.2.</span> <span class="toc-text">无法重现问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#报告"><span class="toc-number">3.2.</span> <span class="toc-text">报告</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.1.</span> <span class="toc-text">问题报告的特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.2.</span> <span class="toc-text">问题报告的要素</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#软件质量"><span class="toc-number">4.</span> <span class="toc-text">软件质量</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ISO-9126"><span class="toc-number">4.1.</span> <span class="toc-text">ISO 9126</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试方法"><span class="toc-number">5.</span> <span class="toc-text">测试方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#结构测试与功能测试"><span class="toc-number">5.1.</span> <span class="toc-text">结构测试与功能测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#增长测试"><span class="toc-number">5.2.</span> <span class="toc-text">增长测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#静态测试"><span class="toc-number">5.3.</span> <span class="toc-text">静态测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态测试"><span class="toc-number">5.4.</span> <span class="toc-text">动态测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可用性测试"><span class="toc-number">5.5.</span> <span class="toc-text">可用性测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#边界条件测试"><span class="toc-number">5.6.</span> <span class="toc-text">边界条件测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#背景测试"><span class="toc-number">5.7.</span> <span class="toc-text">背景测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#错误恢复测试"><span class="toc-number">5.8.</span> <span class="toc-text">错误恢复测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quicky演示测试"><span class="toc-number">5.9.</span> <span class="toc-text">Quicky演示测试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#交互测试"><span class="toc-number">6.</span> <span class="toc-text">交互测试</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -717,12 +798,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/24</span><a class="archive-post-title" href="/2019/01/24/skm2/">支付宝收款码</a>
+            <span class="archive-post-date">01/24</span><a class="archive-post-title" href="/2019/01/24/skm/">微信收款码</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/24</span><a class="archive-post-title" href="/2019/01/24/skm/">微信收款码</a>
+            <span class="archive-post-date">01/24</span><a class="archive-post-title" href="/2019/01/24/skm2/">支付宝收款码</a>
         </li>
     
     </ul></div>
