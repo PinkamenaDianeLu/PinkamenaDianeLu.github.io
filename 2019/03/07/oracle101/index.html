@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Hi bro!</title>
+    <title>oracle101 · Hi bro!</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">应无所住，而生其心</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">oracle101</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">应无所住，而生其心</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.png)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            oracle101
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="oracleABC">oracleABC</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.3k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/03/07</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,102 +399,98 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/29/softwareTesting_1/">
-            
-                <span>测试人员</span>
-        </a>
-        <div class="abstract-content">
-             软件测试 —— 测试人员 
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h1><p>我们说的oracle即使oracle数据库，事实上oracle全称甲骨文股份有限公司(甲骨文软件系统有限公司)，是全球最大的企业级软件公司</p>
+<p>oralce目前依然是占有率最大的关系型数据库，同样的还有sqlserver和mysql，但是其在分量和服务上都不如oracle，虽然说现在mysql有赶超oracle的趋势，但是现在oracle依然是关系型数据库的龙头。</p>
+<p>Oracle不仅提供数据库服务,还提供例如数据支持、云计算、大数据等服务，连我们熟知的java，也属于oracle公司</p>
+<img src="/picture/oracle101/1.jpg" class="[class names]">
+<h1 id="关系型数据库"><a href="#关系型数据库" class="headerlink" title="关系型数据库"></a>关系型数据库</h1><p>1970年 一个叫做codd的博士写了一篇叫做<br><img src="/picture/oracle101/2.png" class="[class names]"></p>
+<p>的论文。在此文章里 创造性的提出了一个叫做关系形模型的概念<br>要点：<br><img src="/picture/oracle101/3.png" class="[class names]"></p>
+<ol>
+<li>由对象和对象之间的关系组成的集合</li>
+<li>对关系对应的一些操作</li>
+<li>通过约束使数据的完整性保持精确和一致</li>
+</ol>
+<p>简单来说，关系型数据库就是由一些二维表组成的（原文：<em>A relational database is a collection of relations or two-dimensional tables</em>）</p>
+<h1 id="表"><a href="#表" class="headerlink" title="表"></a>表</h1><p>事实上数据在存储中是以数据文件的方式存在的，但是我们使用时可以理解为数据是在各个表中的，一个关系型数据库由多个数据表组成（Table），数据表是关系数据库的基本存储结构，当我们使用sql（DQL）进行查询时数据依然以二维表的方式展现给我们</p>
+<p>在我们遇到一些晦涩难懂的概念时，我们通常会将其模拟或抽象成一个比喻、一张图、或是一个故事，我们可以将这种方式称之为模型，而有一种叫做逻辑数据结构的模型，其中的实体关系模型（E-R）非常适合形容关系型数据库系统中表与表的关系</p>
+<p>关系数据模型中，无论是是实体、还是实体之间的联系都是被映射成统一的关系—一张二维表，在关系模型中，操作的对象和结果都是一张二维表；<br>关系型数据库可用于表示实体之间的多对多的关系，只是此时要借助第三个关系—表，来实现多对多的关系；</p>
+<p>举个例子：<br><img src="/picture/oracle101/4.jpg" class="[class names]"></p>
+<p>一名职工可能对应多个产品，一个产品也可能对应多个职工，但是一个职工只能对应一个职工号、姓名、年龄，通过产品与职工、职工与职工号、产品与产品名等一对一、一对多甚至是多对多的关系，将数据之间互相关联，我们可粗略的理解为是关系型模型</p>
+<p>为了减少数据库中的数据冗余，增强数据的易操作性，消除数据插入、删除异常等现象，关系模型要求关系必须是规范化的，这里不介绍三大范式，而是直接介绍一下满足范式的表与表之间存在的三种形式联系</p>
+<h2 id="一对一（1-1）的关联"><a href="#一对一（1-1）的关联" class="headerlink" title="一对一（1:1）的关联"></a>一对一（1:1）的关联</h2><p>一对一的关联从概念上表达的是一个数据对象与另外一个数据对象之间仅表现为一对一的关系；从逻辑上表达的是某个表中的一行数据行仅与另一个表中的某一数据行相对应。</p>
+<h2 id="一对多（1-N）的关联"><a href="#一对多（1-N）的关联" class="headerlink" title="一对多（1:N）的关联"></a>一对多（1:N）的关联</h2><p>一对多的关联从概念上表达的是一个数据对象与另外一个数据对象之间表现为一对多的关系；从逻辑上表达的是某个表中的一行数据行可与另外一个表中的多条数据行相对应。</p>
+<h2 id="多对多（M-N）的关联"><a href="#多对多（M-N）的关联" class="headerlink" title="多对多（M:N）的关联"></a>多对多（M:N）的关联</h2><p>多对多的关联从概念上表达的是一个数据对象与另外一个数据对象之间表现为多对多的关系；从逻辑上表达的是某个表A中的一行数据行可与另外一个表B中的多条数据行相对应，同时这个表A中的多条数据行又与表B中的某一行数据行相对应。</p>
+<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><img src="/picture/oracle101/5.png" class="[class names]">
+<p><strong>SQL  – structured query language   结构查询语言</strong></p>
+<p>数据库对外的主要查询接口，是一个国际标准，几乎所有的数据库都支持，高效率，易学，是一种非过程化语言<br>非过程化语言- 只需要告诉数据库干什么就可以执行 如</p>
+<img src="/picture/oracle101/6.png" class="[class names]">
+<p>我只需要输入当前sql语句 oracle server就会自动返回结果  不需要知道其过程，是一种非常高级的语言<br>Sql语言主要分为4类DML（包括DQL）、DDL、DCL<br><img src="/picture/oracle101/7.png" class="[class names]"></p>
+<h2 id="Dml："><a href="#Dml：" class="headerlink" title="Dml："></a>Dml：</h2><p><strong>数据操纵语言(其中select 可以称为数据查询语言dql  但是同一可称为 dml)</strong></p>
+<pre><code>Insert 增加
+update 更新
+delete 删除
+</code></pre><h2 id="Ddl："><a href="#Ddl：" class="headerlink" title="Ddl："></a>Ddl：</h2><p><strong>数据定义语言  主要用于创建一些对象</strong></p>
+<pre><code>Create：创建
 
+Alter：修改
 
-项目型与职能型项目型测试组织是指测试人员作为项目组成员之一紧...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/29</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="softwareTesting">softwareTesting</a>
-    
-</div>
-            
-        </div>
+Drop：删除
+
+Rename：重命名
+
+Truncate：清空
+</code></pre><h2 id="Dcl："><a href="#Dcl：" class="headerlink" title="Dcl："></a>Dcl：</h2><p><strong>数据控制语言  主要定义一个用户的权限</strong></p>
+<pre><code>Grant：授予
+
+Revoke：撤销
+</code></pre><p>其中我们最常用的就是DML语言，也就是我们常说的增删改查，也是之后着重要了解的东西</p>
+
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/24/skm2/">
-            
-                <span>支付宝收款码</span>
-        </a>
-        <div class="abstract-content">
-            请给我钱，谢谢
-
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://pinkamenadianelu.github.io">Mrlu</a>
+            </p><p>原文链接：<a href="https://pinkamenadianelu.github.io/2019/03/07/oracle101/">https://pinkamenadianelu.github.io/2019/03/07/oracle101/</a>
+            </p><p>发表日期：<a href="https://pinkamenadianelu.github.io/2019/03/07/oracle101/">March 7th 2019, 9:17:36 am</a>
+            </p><p>更新日期：<a href="https://pinkamenadianelu.github.io/2019/03/07/oracle101/">March 7th 2019, 9:46:20 am</a>
+            </p><p>版权声明：我这属实是没啥版权，看个开心就行</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="skm">skm</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/24/skm/">
-            
-                <span>微信收款码</span>
-        </a>
-        <div class="abstract-content">
-            请给我钱，谢谢
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="skm">skm</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/03/07/oracle102/" title="oracle102">
+                    <div class="nextTitle">oracle102</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/02/15/softwareTesting3/" title="软件测试的基本方法">
+                    <div class="prevTitle">软件测试的基本方法</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -525,6 +582,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Oracle"><span class="toc-number">1.</span> <span class="toc-text">Oracle</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#关系型数据库"><span class="toc-number">2.</span> <span class="toc-text">关系型数据库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#表"><span class="toc-number">3.</span> <span class="toc-text">表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一对一（1-1）的关联"><span class="toc-number">3.1.</span> <span class="toc-text">一对一（1:1）的关联</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一对多（1-N）的关联"><span class="toc-number">3.2.</span> <span class="toc-text">一对多（1:N）的关联</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多对多（M-N）的关联"><span class="toc-number">3.3.</span> <span class="toc-text">多对多（M:N）的关联</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SQL"><span class="toc-number">4.</span> <span class="toc-text">SQL</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Dml："><span class="toc-number">4.1.</span> <span class="toc-text">Dml：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ddl："><span class="toc-number">4.2.</span> <span class="toc-text">Ddl：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dcl："><span class="toc-number">4.3.</span> <span class="toc-text">Dcl：</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -738,6 +813,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
