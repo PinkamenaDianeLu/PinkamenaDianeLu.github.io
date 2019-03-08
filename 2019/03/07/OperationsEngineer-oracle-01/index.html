@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Hi bro!</title>
+    <title>记录一次dmp导入数据库 · Hi bro!</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">应无所住，而生其心</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">记录一次dmp导入数据库</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">应无所住，而生其心</a>
 </header>
@@ -220,24 +231,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.png)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            记录一次dmp导入数据库
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="O&S">O&S</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.2k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/03/07</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,70 +399,81 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/24/skm2/">
-            
-                <span>支付宝收款码</span>
-        </a>
-        <div class="abstract-content">
-            请给我钱，谢谢
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>无论是测试工程师还是运维工程师都会遇到需要使用dmp恢复一个库的情况，这里只写出exp导出的数据恢复在oracle库的情况，这是一次实战经历，当然在不同情况可能发生的事情多种多样，这一就不一一指出了</p>
+<h1 id="1-用户"><a href="#1-用户" class="headerlink" title="1.用户"></a>1.用户</h1><p>运维恢复数据的话还是有用户的，但是如果是测试搭建环境的情况下很可能就需要自己创建用户，<strong>此操作需要你当前使用的用户有dba权限</strong></p>
+<figure class="highlight sql"><figcaption><span>创建用户</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> 用户名 <span class="keyword">identified</span> <span class="keyword">by</span> 口令[即密码]；</span><br><span class="line"><span class="comment">--例子：</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> <span class="keyword">test</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="keyword">test</span>; </span><br></pre></td></tr></table></figure>
+<p>当创建好用户后需要给新创建的用户一定权限他才能够工作</p>
+<p>oracle数据库有三种标准角色，连接角色、资源角色、和数据库管理员角色</p>
+<ol>
+<li><p>connect role(连接角色)</p>
+<p>connect是使用oracle简单权限，这种权限只对其他用户的表有访问权限，包括select/insert/update和delete等。拥有connect role 的用户还能够创建表、视图、序列（sequence）、簇（cluster）、同义词(synonym)、回话（session）和其他  数据的链（link）</p>
+</li>
+<li>resource role(资源角色)</li>
+</ol>
+<p>resource提供给用户另外的权限以创建他们自己的表、序列、过程(procedure)、触发器(trigger)、索引(index)和簇(cluster)。</p>
+<ol start="3">
+<li>dba role(数据库管理员角色)</li>
+</ol>
+<p>dba role拥有所有的系统权限。包括无限制的空间限额和给其他用户授予各种权限的能力。system由dba用户拥有</p>
+<p>赋权语法：<br><figure class="highlight sql"><figcaption><span>创建用户</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">grant</span> <span class="keyword">connect</span>, <span class="keyword">resource</span> <span class="keyword">to</span> 用户名;<span class="comment">--这里不同权限用英文逗号 “,” 分隔 </span></span><br><span class="line"><span class="comment">--例子：</span></span><br><span class="line">    <span class="keyword">grant</span> <span class="keyword">connect</span>, <span class="keyword">resource</span> <span class="keyword">to</span> <span class="keyword">test</span>;</span><br><span class="line"><span class="comment">--这条语句就是讲connect和resource权限赋给用户test ，在大多数场景中也是如此</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="2-表空间"><a href="#2-表空间" class="headerlink" title="2.表空间"></a>2.表空间</h1><p>oracle中每个用户拥有不同的表空间，默认创建完一个用户之后会自动为其分配一个以自己名命名的表空间，但是我们一般不会用，而是自己创建一个表空间在分给这名用户</p>
+<p>首先我们要看一下其他物理文件都是放在什么地方的，<br><figure class="highlight sql"><figcaption><span>查看表空间大小以及路径</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> tablespace_name, </span><br><span class="line">file_id, </span><br><span class="line">file_name, </span><br><span class="line"><span class="keyword">round</span>(<span class="keyword">bytes</span> / (<span class="number">1024</span> * <span class="number">1024</span>), <span class="number">0</span>) total_space </span><br><span class="line"><span class="keyword">FROM</span> dba_data_files </span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> tablespace_name; </span><br></pre></td></tr></table></figure><br><img src="/picture/OperationsEngineer-oracle-01/1.PNG" class="[class names]"></p>
+<p>再此可以看见，这里的数据文件都是存储在E盘下的某个文件夹中，那么我们为表空间设置的路径也就是 E:.………DBf</p>
+<p>然后我们创建一个表空间，在数据量较小的情况下穿件一个普通的表空间即可，但是有些数据量比较大的情况下我们要创建bigfile类型的表空间，关于普通表空间与bigfile类型的区别网上有很多介绍，这里之写出创建方法<br><figure class="highlight sql"><figcaption><span>创建表空间</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">tablespace</span> 表空间名 <span class="keyword">datafile</span> <span class="string">'文件路径'</span> <span class="keyword">size</span> 初始大小  <span class="keyword">Autoextend</span> <span class="keyword">on</span>; <span class="comment">--Autoextend on 的意思是开启自增长</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--大数据表空间文件加上datafile即可 </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">bigfile</span> <span class="keyword">tablespace</span> dept <span class="keyword">datafile</span> <span class="string">'E:\路径\dept.DBF'</span> <span class="keyword">size</span> <span class="number">500</span>M <span class="keyword">AUTOEXTEND</span> <span class="keyword">on</span>;</span><br></pre></td></tr></table></figure></p>
+<p> 最后将表空间赋给用户<br><figure class="highlight sql"><figcaption><span>将表空间赋给用户</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> 用户名 <span class="keyword">default</span> <span class="keyword">tablespace</span> 表空间名;  </span><br></pre></td></tr></table></figure><br><img src="/picture/OperationsEngineer-oracle-01/2.PNG" class="[class names]"></p>
+<p>此时再使用查看表空间的语句就可以看到我们的表空间已经被赋予用户了<br><figure class="highlight sql"><figcaption><span>查看用户及其表空间</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> dba_users <span class="keyword">where</span> username=<span class="string">'用户名'</span>;<span class="comment">--注意用户名是大写的 </span></span><br></pre></td></tr></table></figure></p>
+<h1 id="3-开始导入"><a href="#3-开始导入" class="headerlink" title="3.开始导入"></a>3.开始导入</h1><p>首先我们要有一份通过exp导出的dmp文件，网上有一些方法能够判断这个dmp文件是exp导出还是expdp导出的，但是我们最简单使用的方法还是找到导出人问问他或是养成良好的命名习惯，不然的话上网搜也是有办法的</p>
+<p>这里使用命令行的方式导入</p>
+<h2 id="检查imp"><a href="#检查imp" class="headerlink" title="检查imp"></a>检查imp</h2><p>使用命令行的方式需要我们登录到服务器上，这里我们使用的是一台window server2008的服务器，但是无论在新的版本还是linux版本命令都没有太大却别（linux下注意切换到oracle用户 ： su - oracle ）</p>
+<figure class="highlight dos"><figcaption><span>检查imp</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imp <span class="built_in">help</span>=y； </span><br></pre></td></tr></table></figure>
+<p>出现以下输出即证明可使用imp<br><img src="/picture/OperationsEngineer-oracle-01/5.PNG" class="[class names]"></p>
+<h2 id="导入用户"><a href="#导入用户" class="headerlink" title="导入用户"></a>导入用户</h2><p>首先要确认这份文件的导出用户身份，<strong>dba导入的文件只能用dba权限的账号导入</strong></p>
+<p>导入命令：</p>
+<p>这里我假定导入用户与假如用户不是同一个用户<br><figure class="highlight dos"><figcaption><span>导入数据</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imp userid=用户名/密码 fromuser=导出用户 touser=导入用户 ignore=y file=数据文件 ；</span><br></pre></td></tr></table></figure></p>
+<p>当两者为一个用户或是为一个新库导入时，可直接<br><figure class="highlight dos"><figcaption><span>导入数据</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imp userid=用户名/密码  ignore=y file=数据文件 full=y；</span><br></pre></td></tr></table></figure></p>
+<p>导入成功：<br><img src="/picture/OperationsEngineer-oracle-01/4.PNG" class="[class names]"></p>
 
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="skm">skm</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/24/skm/">
-            
-                <span>微信收款码</span>
-        </a>
-        <div class="abstract-content">
-            请给我钱，谢谢
-
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://pinkamenadianelu.github.io">Mrlu</a>
+            </p><p>原文链接：<a href="https://pinkamenadianelu.github.io/2019/03/07/OperationsEngineer-oracle-01/">https://pinkamenadianelu.github.io/2019/03/07/OperationsEngineer-oracle-01/</a>
+            </p><p>发表日期：<a href="https://pinkamenadianelu.github.io/2019/03/07/OperationsEngineer-oracle-01/">March 7th 2019, 2:43:49 pm</a>
+            </p><p>更新日期：<a href="https://pinkamenadianelu.github.io/2019/03/07/OperationsEngineer-oracle-01/">March 7th 2019, 4:35:59 pm</a>
+            </p><p>版权声明：我这属实是没啥版权，看个开心就行</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="skm">skm</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/03/07/oracle102/" title="oracle102">
+                    <div class="prevTitle">oracle102</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -493,6 +565,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-用户"><span class="toc-number">1.</span> <span class="toc-text">1.用户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-表空间"><span class="toc-number">2.</span> <span class="toc-text">2.表空间</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-开始导入"><span class="toc-number">3.</span> <span class="toc-text">3.开始导入</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#检查imp"><span class="toc-number">3.1.</span> <span class="toc-text">检查imp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#导入用户"><span class="toc-number">3.2.</span> <span class="toc-text">导入用户</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -722,6 +812,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
