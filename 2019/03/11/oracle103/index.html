@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>oracle102 · Hi bro!</title>
+    <title>oracle103 · Hi bro!</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">应无所住，而生其心</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">oracle102</a>
+                <a href="#" class="post-name">oracle103</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            oracle102
+            oracle103
             <!-- 404 -->
             
         </h1>
@@ -272,12 +272,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1.1k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">2.6k</span>阅读时长: <span class="post-count reading-time">9 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/03/07</span>
+                    <span class="post-intro-time">2019/03/11</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,54 +401,79 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="SELECT-01"><a href="#SELECT-01" class="headerlink" title="SELECT_01"></a>SELECT_01</h1><p>Select语句是sql语句的重中之重，可以说日常的工作中使用最多的也就是select语句</p>
-<img src="/picture/oracle102/1.png" class="[class names]">
-<p>也就是我们熟知的 select  <em> from表  where 条件 </em>的意思可以理解为 所有</p>
-<p>所以也可以写为</p>
-<figure class="highlight sql"><figcaption><span>select</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> 列名…  <span class="keyword">from</span> 表 </span><br></pre></td></tr></table></figure>
-<h2 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h2><p>当我们为了方便查看或是某些特定需求的时候，我们可以使用列别名来查询数据<br><img src="/picture/oracle102/2.png" class="[class names]"></p>
-<p>更改显示的名字</p>
-<p>可用于算符表达式</p>
-<p>元名字加上空格 再加上别名就可以 也可以加上as</p>
-<p>可以在别名上加上双引号  使其可以显示特殊符号，空格 和大小写(否则都是大写)</p>
-<figure class="highlight sql"><figcaption><span>as</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span>   列名 <span class="keyword">as</span>  列别名  <span class="keyword">from</span>  表   </span><br></pre></td></tr></table></figure>
-<p>这样在查询结果处就会以你想要的列名出现<br><img src="/picture/oracle102/3.png" class="[class names]"></p>
-<h2 id="Concatenation-operator：连接操作符"><a href="#Concatenation-operator：连接操作符" class="headerlink" title="Concatenation operator：连接操作符"></a>Concatenation operator：连接操作符</h2><p>||<br>可以将两个东西连接起来或是在两个中间加上字面符号 用单引号引起来<br><img src="/picture/oracle102/4.png" class="[class names]"><br><img src="/picture/oracle102/5.png" class="[class names]"></p>
-<h2 id="简单的常用函数"><a href="#简单的常用函数" class="headerlink" title="简单的常用函数"></a>简单的常用函数</h2><p>在工作中经常会出现一些统计型的需求，比如查询最大值、最小值、总数之类，这时我们要使用一些oracle自带的函数来解决问题，这些函数并不是适用于所有数据库，但是在我们日常使用的oracle中非常实用</p>
-<p></p><h3>Count() 查询总数</h3><br>Count()函数能够返回查询的总数目，用于统计总数，括号中推荐写1而不是写* 从而提高查询效率<br><figure class="highlight sql"><figcaption><span>count()</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(<span class="number">1</span>) <span class="keyword">from</span> 表  </span><br></pre></td></tr></table></figure><p></p>
-<p></p><h3>Max()、Min() 查询最大值、最小值</h3><br>Max()函数能够返回查询结果的列名的最大值,同理min()返回最小值<br><figure class="highlight sql"><figcaption><span>max(),min()</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">max</span>(列名) <span class="keyword">from</span> 表；<span class="comment">--查询某列的最大值</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">min</span>(列名) <span class="keyword">from</span> 表；<span class="comment">--查询某列的最小值 </span></span><br></pre></td></tr></table></figure><p></p>
-<p></p><h3>Length() 查询长度</h3><br>可以用 select length(列名) from 表 来查询一个字段的长度，工作中常放在where后来筛选某字段长度，如统计2个字名字和三个字名字的人就可以用length()函数<br><img src="/picture/oracle102/14.PNG" class="[class names]"><p></p>
-<p></p><h3>upper() lower() 转换大小写</h3><br><img src="/picture/oracle102/15.PNG" class="[class names]"><br>在查询结果为英文时，我们可以使用upper(列名) 来将结果转换为大写或是用lower(列名)将结果转换为小写，他也多用于where条件中，最常见的就是身份证号最后的x，在不同库中存储的大小写可能不同，那么就可以使用此函数将其统一<p></p>
-<h2 id="where"><a href="#where" class="headerlink" title="where"></a>where</h2><p>where不仅存在于select语句，他表示搜索的限定条件<br><img src="/picture/oracle102/6.png" class="[class names]"><br>Where 指明条件 </p>
-<p>Where子句是true  false 还有no null (null在之后讲解)</p>
-<p>Where子句中不能使用别名<br><img src="/picture/oracle102/7.png" class="[class names]"><br>常量的字符串要用单引号引起来</p>
-<p>当涉及到字符串的比较时，区分大小写</p>
-<p>查询时要符合格式(如日期要符合列中的对应格式)</p>
-<p>可以使用 upper()或是lower()函数 将列的内容去哪不变成大写或小写 进行查询<br><img src="/picture/oracle102/8.png" class="[class names]"></p>
-<p></p><h3>关系运算符</h3><br>只要where子句后的表达式为true时，即可返回相应数值，在计算机中，true与false往往表示真假、成立或不成立的意思，在sql中可以理解为   成立的条件<p></p>
-<p>大于&gt; 小于&lt; 等于=  不等于&gt;&lt;  大于等于=&gt;   小于等于=&lt;</p>
-<pre><code>Select * from 表 where 列名 关系运算符  条件
-</code></pre><figure class="highlight sql"><figcaption><span>关系运算符</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>  *  <span class="keyword">from</span>  表 <span class="keyword">where</span>  xm=<span class="string">'张三'</span>; <span class="comment">--姓名为张三的</span></span><br><span class="line"><span class="keyword">select</span>  *  <span class="keyword">from</span>  表 <span class="keyword">where</span>  xm&gt;&lt;<span class="string">'张三'</span>;<span class="comment">--姓名不是张三的</span></span><br><span class="line"><span class="keyword">select</span>  *  <span class="keyword">from</span>  表 <span class="keyword">where</span>  age&gt;<span class="number">19</span>;<span class="comment">--年龄大于19岁的</span></span><br><span class="line"><span class="keyword">select</span>  *  <span class="keyword">from</span>  表 <span class="keyword">where</span>  age&lt;<span class="number">9</span>;<span class="comment">--年龄小于19岁的</span></span><br><span class="line"><span class="keyword">select</span>  *  <span class="keyword">from</span>  表 <span class="keyword">where</span>  age&gt;=<span class="number">19</span>;<span class="comment">--年龄大于等于19岁的</span></span><br><span class="line"><span class="keyword">select</span>  *  <span class="keyword">from</span>  表 <span class="keyword">where</span>  age&lt;=<span class="number">19</span>;<span class="comment">--年龄小于等于19岁的</span></span><br></pre></td></tr></table></figure>
-<p></p><h3>and、or、not</h3><br><img src="/picture/oracle102/9.png" class="[class names]"><p></p>
-<p>这三个词就像我们所知的英语单词一样 <strong>and 和、or 或者、not 不是</strong> </p>
-<p><strong>AND</strong> 而且并且 两者都为true时<br><img src="/picture/oracle102/10.png" class="[class names]"></p>
-<p><strong>OR</strong>两者一个为true即可<br><img src="/picture/oracle102/11.png" class="[class names]"><br><strong>Not</strong> 取反 如果是true  那么就是false</p>
-<h1 id="ORDER-BY"><a href="#ORDER-BY" class="headerlink" title="ORDER BY"></a>ORDER BY</h1><img src="/picture/oracle102/12.png" class="[class names]">
-<p>使用order by 排序</p>
-<p>ASC 升序排序(默认)   DESC 降序排列</p>
-<p>在整个select 句子中 order by 在句子最后，注意 order by 子句不是必须要在where后的</p>
-<figure class="highlight sql"><figcaption><span>order by</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> * <span class="keyword">from</span> 表 <span class="keyword">order</span> <span class="keyword">by</span> 某列 </span><br></pre></td></tr></table></figure>
-<img src="/picture/oracle102/13.png" class="[class names]">
-<p>也可以按照列别名,列名顺序排序<br>也可以按多个列排序<br>(当出现null值   升序在最后 降序在最前  也可以用 nulls first 或是 nulls last  规定null值放在最前或最后)</p>
+        <h1 id="oracle常用数据类型"><a href="#oracle常用数据类型" class="headerlink" title="oracle常用数据类型"></a>oracle常用数据类型</h1><p>在oracle中，不同列以不同的数据类型存储数据，这些属性会使 Oracle数据库区别对待不同数据类型的值，Oracle 数据库提供了几种内建的数据类型。 最常用的数据类型分为以下几类：</p>
+<ul>
+<li>字符数据类型</li>
+<li>数字数据类型</li>
+<li>日期时间数据类型</li>
+<li>ROWID 数据类型</li>
+<li>格式模型</li>
+</ul>
+<p>和数据类型其他几种重要的内建类型包括 RAW、大对象 (LOB)、 和集合。<br>PL/SQL 具有用于常量和变量的数据类型，包括布尔、 引用类型、 复合类型 （记录） 、和用户定义类，这里只介绍几种常用的简单数据类型</p>
+<h2 id="varchar2"><a href="#varchar2" class="headerlink" title="varchar2()"></a>varchar2()</h2><p>Varchar2应该是最常见的数据类型，他几乎能存储通过计算机键盘输入的任何字符，varchar2的最大长度是4000字节或4000个字符.</p>
+<p>与字符编码模式相对应的字节值，一般称为字符集或代码页。 数据库字符集是在数据库创建时建立的。字符集的例子有 7 位 ASCII 码、 EBCDIC码、和 Unicode utf-8。<br>当创建一个有 VARCHAR2 列的表时，指定该列的最大字符串长度。例如：last_name 列是 VARCHAR2(25)数据类型，这意味着该列中存储的名字最多可以长达 25 个 字节。</p>
+<p>对每一行， Oracle 数据库将按可变长度字段来存储值，如果一个值超出最大长度，数据库将返回一个错误。例如，在单字节字符集中，如果您在某行的 last_name 列输入 10 个字符，那么在行片中该列只存储 10 个字符 （10 个字节） 而不是 25。<br>使用 VARCHAR2 可以减少空间占用。</p>
+<p>与 VARCHAR2 不同， CHAR 存储固定长度的字符串。当创建一个有CHAR 列的表时，需要为该列指定一个字符串长度。默认值是 1 个字节。数据库使用空格填充到指定的长度的值。</p>
+<p>Oracle Database compares VARCHAR2 values using nonpadded comparison semantics and compares CHAR values using blank-padded  comparison semanticsOracle<br>数据库将使用非填充比较语义来比较 VARCHAR2 值，而使用空白填充比较语义来比较 CHAR 值</p>
+<h2 id="数字类型"><a href="#数字类型" class="headerlink" title="数字类型"></a>数字类型</h2><h3>Number（precision,scale） </h3><br>Oracle 数据库的数字数据类型存储固定和浮点数字、零、或无穷。某些数值类型也可以存储未定义操作的结果值，叫做”非数字”或 NAN。Oracle 数据库以变长格式存储数字数据。用科学计数法存储值，其中一个字节用于存储指数。数据库使用最多 20 个字节存储尾数，即浮点数的有效位数部分。Oracle 数据库不会存储前导零和结尾<br>数字数据类型可以存储整数和整数/小数混合的数字。当存储非整数时，数字的有效位数称为精度，右边的小数部分称为刻度或小数位数，例如，数字29.1963的精度为6，刻度为4<br><br><img src="/picture/oracle103/1.png" class="[class names]"><br><br>如果您指定了精度但没有指定小数位数，如 NUMBER(6)，那么小数位数为 0。<br><br><h3>浮点数 </h3>
 
+<p>Oracle 数据库为浮点数提供了两种互斥的数值数据类型： 、FLOAT 和 DOUBLE。这两种类型支持所有 NUMBER 数据类型提供的基本功能。然而，相比 NUMBER 使用十进制精度，float   (BINARY_FLOAT) 和double   (BINARY_DOUBLE) 使用二进制精度，可以使算术计算更快并且通常可以降<br>低存储需求</p>
+<h2 id="日期"><a href="#日期" class="headerlink" title="日期"></a>日期</h2><p>日期时间数据类型包括 DATE 和 TIMESTAMP。Oracle 数据库为时间戳提供全面的时区支持</p>
+<h3>DATE </h3><br>数据库根据指定的格式模型显示日期。格式模型是一个描述在字符串中的日期时间格式的字符文字。标准的日期格式是 DD-MON-RR，它会以 01-JAN-09 的形式显示日期。RR 类似于 YY （年的最后两位），但返回值的世纪值会因指定的两位年份及本年度的最后两位不同而不同。假设在 1999 年，数据库显示为 01-JAN-09。<br><br>如果日期格式使用 RR，那么 09 指的是 2009，而如果格式使用 YY，那么 09 指的是 1909。您可以更改实例或会话级别的默认日期格式。Oracle 数据库以 24 小时制格式存储时间 — — HH:MI:SS。如果不输入的任何时间部分，那么默认情况下，日期字段中的时间是凌晨 00: 00: 00，如果只输入了时间，则日期部分默认为当月的第一天<br><br><br>我们常用date类型存储时间，再用to_char()函数进行转化显示，常用的就是to_char(sysdate,’yyyy-MM-dd hh24:mi:ss’) 显示时间<br><figure class="highlight sql"><figcaption><span>查看数据库当前时间</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span>  TO_CHAR(<span class="keyword">sysdate</span>,’yyyy-MM-dd hh24:mi:ss’) <span class="keyword">FROM</span> DUAL;</span><br></pre></td></tr></table></figure><br><br><h3>TIMESTAMP  </h3>
+
+<p>TIMESTAMP 数据类型是日期数据类型的扩展。除了存储在 DATE 数据类型的信息，它同时还存储秒的小数部分。TIMESTAMP 数据类型对于存储精确时间的值很有用，比如那些必须跟踪事件顺序的应用程序。DATETIME 数据类型 TIMESTAMP WITH TIME ZONE 和TIMESTAMP WITH LOCAL TIME ZONE 能感知时区。当用户中选择数据时，其值会被调整以适配用户会话的时区。此数据类型可用于收集和评估各地理区域的日期信息<br>我们可以使用此语句来看当前的时间戳<br><figure class="highlight sql"><figcaption><span>查看时间戳</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> SYSTIMESTAMP <span class="keyword">FROM</span> DUAL;</span><br></pre></td></tr></table></figure><br><img src="/picture/oracle103/18.PNG" class="[class names]"><br>时间戳也可以使用to_char转化成对应的格式查看<br><img src="/picture/oracle103/19.PNG" class="[class names]"></p>
+<p>关于to_char()函数我们将在稍后介绍</p>
+<h2 id="Rowid数据类型"><a href="#Rowid数据类型" class="headerlink" title="Rowid数据类型"></a>Rowid数据类型</h2><p></p><h3>使用 Rowid</h3><br>Oracle 数据库在内部使用 rowids用于构造索引，最常见的 B 树索引，包含一个被划分成多个键范围的排序列表。每个键都与一个指向关联的行地址的rowid 相关联，用于快速访问。最终用户和应用程序开发人员也可以使用rowids 的几个重要功能：<p></p>
+<ul>
+<li>Rowids 是访问特定行的最快方式。</li>
+<li>Rowids 提供了查看表的组织方式的能力。</li>
+<li>Rowids 是给定表中的行的唯一标识符。</li>
+</ul>
+<p>即是，我们常说的索引可以加快数据库的查询速度，我们可以理解为rowids将数据在表的存储中作出门牌号，访问时使用门牌号可以直接访问省去不断搜索的过程。我们常用的id列来为每条数据添加唯一标识，而rowid就是oracle为我们添加的id</p>
+<p></p><h3> ROWID  伪列</h3><br>Oracle 数据库中的每个表都有一个名为 ROWID 的  伪列。 伪列类似于表列，但实际上并不存储在表中。您可以从伪列中选择数据，但不能插入、更新、或删除它们的值。伪列也类似于不带参数的 SQL 函数。不带参数的函数对于结果集中的每一行通常返回相同的值，而伪列通常为每个行返回不同的值。<p></p>
+<p>ROWID 伪列的值是表示的每个行的地址的字符串。这些字符串具有的数据类型 ROWID。在执行 SELECT 或 DESCRIBE 列出表的结构时，此伪列并不显示，它也不占用空间。但是，每个行的 rowid 可以通过使用保留字ROWID 作为列名的 SQL 查询来检索。<br><img src="/picture/oracle103/21.PNG" class="[class names]"><br>我们也可以利用其唯一标识的特性，快速的为数据去重，比如我查询用户表中姓名相同的人<br><figure class="highlight sql"><figcaption><span>查重</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">USER</span>表 A <span class="keyword">WHERE</span>  <span class="keyword">ROWID</span>&lt; (<span class="keyword">SELECT</span> <span class="keyword">MAX</span>(<span class="keyword">ROWID</span>) <span class="keyword">FROM</span> <span class="keyword">USER</span>表 B <span class="keyword">WHERE</span> A.XM=B.XM;)</span><br></pre></td></tr></table></figure></p>
+<p>rowid不同于我们常见rownum，rownum是动态的，并不是一种数据类型而是伪列，是在获取查询结果集后再加上去的 （获取一条记录加一个rownum）。对符合条件的结果添加一个从1开始的序列号<br><img src="/picture/oracle103/20.PNG" class="[class names]"></p>
+<h1 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h1><img src="/picture/oracle103/2.png" class="[class names]">
+<p>Oracle 的数据转换分为两种, 隐式转换和显式转换 （推荐使用）,即不需要使用函数转换和需要使用函数帮助转念,而在实际工作中我们更推荐使用显式转换</p>
+<img src="/picture/oracle103/3.png" class="[class names]">
+<p>此图可以看出 例如一个character类型的数据,可以用to_number转换为number再由to_char转换为character，并且此过程可被隐式转换</p>
+<p>右侧，当一个character类型的数据想要变成date类型时候，则需要to_date进行显式转换，或使用to_char转换回来</p>
+<h2 id="to-char"><a href="#to-char" class="headerlink" title="to_char()"></a>to_char()</h2><p>to_char(时间,’日期类型’)<br><img src="/picture/oracle103/4.png" class="[class names]"></p>
+<ul>
+<li>To_char(时间,’字符串格式’)</li>
+<li>格式必须用单引号</li>
+<li>区分大小写,并不是任意规律</li>
+<li>可以包含任何有效的日期格式类型元素</li>
+<li>加一个fm即可消除前面的空格或前导0<img src="/picture/oracle103/5.png" class="[class names]">
+<img src="/picture/oracle103/6.png" class="[class names]">
+<img src="/picture/oracle103/7.png" class="[class names]">
+<img src="/picture/oracle103/8.png" class="[class names]">
+<strong>常见的日期格式</strong><img src="/picture/oracle103/9.png" class="[class names]">
+</li>
+</ul>
+<p>To_char()函数还可用于转换数据的格式，如<br><figure class="highlight sql"><figcaption><span>查重</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">to_char(1210.73, '9999.9') <span class="comment">--返回 '1210.7' </span></span><br><span class="line"></span><br><span class="line">to_char(1210.73, '9,999.99') <span class="comment">--返回 '1,210.73' </span></span><br><span class="line"></span><br><span class="line">to_char(1210.73, '$9,999.00') <span class="comment">--返回 '$1,210.73' </span></span><br><span class="line"></span><br><span class="line">to_char(21, '000099') <span class="comment">--返回 '000021' </span></span><br></pre></td></tr></table></figure><br>再此不做详细的叙述</p>
+<h2 id="To-number-和To-date"><a href="#To-number-和To-date" class="headerlink" title="To_number()和To_date()"></a>To_number()和To_date()</h2><img src="/picture/oracle103/10.png" class="[class names]">
+<h2 id="嵌套函数"><a href="#嵌套函数" class="headerlink" title="嵌套函数"></a>嵌套函数</h2><img src="/picture/oracle103/11.png" class="[class names]">
+<p>函数嵌套时,优先计算最里面的函数的值,然后将该函数的值作为上一层的函数的参数</p>
+<p>举个例子<br><img src="/picture/oracle103/12.png" class="[class names]"></p>
+<p>使用subtr()函数截取字符串，再由concat()函数与_US拼接，最后由upper()函数转为大写</p>
+<h1 id="General-函数"><a href="#General-函数" class="headerlink" title="General 函数"></a>General 函数</h1><p>在sql中是没有逻辑判断的，常用的if for in等写在存储过程中的语句是oracle提供的plsql，再此不做介绍。而为了解决此问题，sql提供了General function，此类函数能判断空值并返回对应的参数，在实际使用中非常实用</p>
+<img src="/picture/oracle103/13.png" class="[class names]">
+<h2 id="Nvl-函数"><a href="#Nvl-函数" class="headerlink" title="Nvl()函数"></a>Nvl()函数</h2><img src="/picture/oracle103/14.png" class="[class names]">
+<p>如果第一个参数不是null，返回第一个结果，如果不是null，返回第二个参数<br><img src="/picture/oracle103/15.png" class="[class names]"></p>
+<h2 id="Nvl2-函数"><a href="#Nvl2-函数" class="headerlink" title="Nvl2()函数"></a>Nvl2()函数</h2><p>判断第一个函数，如果第一个函数式null，则返回第一个参数，否则返回第二个参数<br><img src="/picture/oracle103/15.png" class="[class names]"></p>
+<h2 id="Nullif"><a href="#Nullif" class="headerlink" title="Nullif()"></a>Nullif()</h2><p>比较两个参数的值，如果两个参数值相等，则返回null，否则返回第一个参数。<br>此函数多用于比较大小，并与其他函数嵌套使用<br><img src="/picture/oracle103/17.png" class="[class names]"></p>
+<h1 id="附件：ORACLE与java-的数据类型转换"><a href="#附件：ORACLE与java-的数据类型转换" class="headerlink" title="附件：ORACLE与java 的数据类型转换"></a>附件：ORACLE与java 的数据类型转换</h1><img src="/picture/oracle103/f1.png" class="[class names]">
+<img src="/picture/oracle103/f2.png" class="[class names]">
+<img src="/picture/oracle103/f3.png" class="[class names]">
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="https://pinkamenadianelu.github.io">Mrlu</a>
-            </p><p>原文链接：<a href="https://pinkamenadianelu.github.io/2019/03/07/oracle102/">https://pinkamenadianelu.github.io/2019/03/07/oracle102/</a>
-            </p><p>发表日期：<a href="https://pinkamenadianelu.github.io/2019/03/07/oracle102/">March 7th 2019, 9:49:16 am</a>
-            </p><p>更新日期：<a href="https://pinkamenadianelu.github.io/2019/03/07/oracle102/">March 7th 2019, 2:33:44 pm</a>
+            </p><p>原文链接：<a href="https://pinkamenadianelu.github.io/2019/03/11/oracle103/">https://pinkamenadianelu.github.io/2019/03/11/oracle103/</a>
+            </p><p>发表日期：<a href="https://pinkamenadianelu.github.io/2019/03/11/oracle103/">March 11th 2019, 8:55:15 am</a>
+            </p><p>更新日期：<a href="https://pinkamenadianelu.github.io/2019/03/11/oracle103/">March 11th 2019, 2:54:39 pm</a>
             </p><p>版权声明：我这属实是没啥版权，看个开心就行</p>
         </div>
     
@@ -456,17 +481,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/03/07/OperationsEngineer-oracle-01/" title="记录一次dmp导入数据库">
-                    <div class="nextTitle">记录一次dmp导入数据库</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/03/07/oracle101/" title="oracle101">
-                    <div class="prevTitle">oracle101</div>
+                <a href="/2019/03/07/OperationsEngineer-oracle-01/" title="记录一次dmp导入数据库">
+                    <div class="prevTitle">记录一次dmp导入数据库</div>
                 </a>
             
         </li>
@@ -592,7 +612,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SELECT-01"><span class="toc-number">1.</span> <span class="toc-text">SELECT_01</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#别名"><span class="toc-number">1.1.</span> <span class="toc-text">别名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Concatenation-operator：连接操作符"><span class="toc-number">1.2.</span> <span class="toc-text">Concatenation operator：连接操作符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#简单的常用函数"><span class="toc-number">1.3.</span> <span class="toc-text">简单的常用函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.1.</span> <span class="toc-text">Count() 查询总数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.2.</span> <span class="toc-text">Max()、Min() 查询最大值、最小值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.3.</span> <span class="toc-text">Length() 查询长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.4.</span> <span class="toc-text">upper() lower() 转换大小写</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#where"><span class="toc-number">1.4.</span> <span class="toc-text">where</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.1.</span> <span class="toc-text">关系运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.2.</span> <span class="toc-text">and、or、not</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ORDER-BY"><span class="toc-number">2.</span> <span class="toc-text">ORDER BY</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#oracle常用数据类型"><span class="toc-number">1.</span> <span class="toc-text">oracle常用数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#varchar2"><span class="toc-number">1.1.</span> <span class="toc-text">varchar2()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数字类型"><span class="toc-number">1.2.</span> <span class="toc-text">数字类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.1.</span> <span class="toc-text">Number（precision,scale） </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.2.</span> <span class="toc-text">浮点数 </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#日期"><span class="toc-number">1.3.</span> <span class="toc-text">日期</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.1.</span> <span class="toc-text">DATE </span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.2.</span> <span class="toc-text">TIMESTAMP  </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rowid数据类型"><span class="toc-number">1.4.</span> <span class="toc-text">Rowid数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.1.</span> <span class="toc-text">使用 Rowid</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.2.</span> <span class="toc-text"> ROWID  伪列</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据类型转换"><span class="toc-number">2.</span> <span class="toc-text">数据类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#to-char"><span class="toc-number">2.1.</span> <span class="toc-text">to_char()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#To-number-和To-date"><span class="toc-number">2.2.</span> <span class="toc-text">To_number()和To_date()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#嵌套函数"><span class="toc-number">2.3.</span> <span class="toc-text">嵌套函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#General-函数"><span class="toc-number">3.</span> <span class="toc-text">General 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Nvl-函数"><span class="toc-number">3.1.</span> <span class="toc-text">Nvl()函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nvl2-函数"><span class="toc-number">3.2.</span> <span class="toc-text">Nvl2()函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nullif"><span class="toc-number">3.3.</span> <span class="toc-text">Nullif()</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#附件：ORACLE与java-的数据类型转换"><span class="toc-number">4.</span> <span class="toc-text">附件：ORACLE与java 的数据类型转换</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
