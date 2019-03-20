@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>测试人员 · Hi bro!</title>
+    <title>浅析oracle中的监听文件 · Hi bro!</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">应无所住，而生其心</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">测试人员</a>
+                <a href="#" class="post-name">浅析oracle中的监听文件</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            测试人员
+            浅析oracle中的监听文件
             <!-- 404 -->
             
         </h1>
@@ -266,18 +266,18 @@ height:50vh;
                 
                     <div class="post-intro-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="softwareTesting">softwareTesting</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="Superficial analysis">Superficial analysis</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">931</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.6k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/01/29</span>
+                    <span class="post-intro-time">2019/03/20</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,49 +401,64 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p></p><h1> 软件测试 —— 测试人员 </h1><p></p>
+        <h1 id="什么是Oracle监听器"><a href="#什么是Oracle监听器" class="headerlink" title="什么是Oracle监听器"></a>什么是Oracle监听器</h1><p>Oracle监听器是一个只运行在服务器上并监听链接请求的服务。Oralce提供一个名为Lsnrctl的使用程序来管理监听器进程。数据库用监听器记录关于服务、实例以及服务处理器的信息。说白了就是我们每次链接数据库都需要通过监听器，当连接时报告错误以TNS开头，那么多半是监听出现问题了</p>
+<h1 id="Oracle监听器"><a href="#Oracle监听器" class="headerlink" title="Oracle监听器"></a>Oracle监听器</h1><p>oracle监听器主要存在在$ORACLE_HOME\network\admin目录下（$ORACLE_HOME为环境变量，有些window环境可能没有这个环境变量，那么就判断oracle 的安装路径即可），路径下主要包括三个文件LISTENER.ora、sqlnet.ora和tnsnames.ora，这三个文件都可以用记事本打开编辑，当然这里我更推荐使用nodpad++。</p>
+<p>我们也可以直接使用命令查看监听器的状态（window直接在dos下，unix需要在oracle用户下）</p>
+<figure class="highlight dos"><figcaption><span>查看监听状态</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsnrctl status </span><br></pre></td></tr></table></figure>
+<p>此命令不仅能显示监听器的状态，还能显示相关文件的位置<br><img src="/picture/A-superficial-analysis-of-oracle-01/11.PNG" class="[class names]"></p>
+<p>listener.ora中的所有的配置参数都具有默认值，不需要手动配置监听服务器。在服务器上创建了第一个数据库后监听器服务自动启动。但是还是有很多情况下是不好使的，这里我们着重说一下一些配置监听</p>
+<h1 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h1><p>在window下其实是可以不配置ORACLE_HOME和ORACLE_SID两个环境变量的(unix下必须配置)，但是保险起见还是要配置并检查一下</p>
+<figure class="highlight plain"><figcaption><span>ORACLE_HOME、ORACLE_SID</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ORACLE_HOME：即使oracle的安装目录，截止到bin目录的上一层，有些数据库可能存在多个该目录，此时要判断那个到底是正在使用的</span><br><span class="line"></span><br><span class="line">ORACLE_SID： oracle 的实例名</span><br></pre></td></tr></table></figure>
+<img src="/picture/A-superficial-analysis-of-oracle-01/12.PNG" class="[class names]">
+<p>接下来就是环境变量path，这个变量在window或unix上都必须存在，目录为$ORACLE_HOME/bin，即oracle安装目录下的bin文件</p>
+<p>仔细检查这三个环境变量，window下可以使用echo %变量名%，linux下可以使用echo $变量名 来显示当前环境变量，设置后常常不会立即生效<br>linux下使用常用的source 重读配置环境变量的文件即可，window下新建一个dos窗口，输入set 目标变量= C 回车 然后关掉窗口再次查看即可<br><img src="/picture/A-superficial-analysis-of-oracle-01/13.PNG" class="[class names]"></p>
 <hr>
 
-<h1 id="项目型与职能型"><a href="#项目型与职能型" class="headerlink" title="项目型与职能型"></a>项目型与职能型</h1><p><strong>项目型测试</strong>组织是指测试人员作为项目组成员之一紧密地结合到项目中，与项目组其他押人员紧密协作，一般是从头到尾跟着项目走<br><img src="https://i.imgur.com/sPj0CBi.png" alt=""></p>
-<p><strong>职能型测试</strong>是指测试人员参与到项目中是以独立的测试部门委派的方式进入的</p>
-<p><img src="https://i.imgur.com/383DyPj.png" alt=""></p>
-<p>这两种方式各有利弊。项目型的好处是测试人员能参与的力度很强，能深入了解项目的方方面面，有利于稳定持续有效的测试出更多细节问题；但测试人员受到项目负责人管理，在对待bug的处理上不能严格要求</p>
-<p>职能型的好处就是避免项目型的部分问题，并且能节省部分测试资源，充分利用各个项目阶段之间的时间差来合理利用测试资源，但是缺点就是深入程度不够，导致测试的问题比较表面</p>
-<h1 id="综合型的测试组织"><a href="#综合型的测试组织" class="headerlink" title="综合型的测试组织"></a>综合型的测试组织</h1><p>可以将项目型结构和职能型结构组合并加以改造。测试部门是独立的部门，测试部门经理根据项目组中项目经理的请求，结合公司对项目的投入和重点方向，决定委派那些测试人员加入到项目组作为常规项目测试人员。在项目的不同阶段在测试部门中委派专项测试人员对项目进行阶段测试</p>
-<p><img src="https://i.imgur.com/rikufss.png" alt=""></p>
-<h1 id="测试人员的发展"><a href="#测试人员的发展" class="headerlink" title="测试人员的发展"></a>测试人员的发展</h1><p><img src="https://i.imgur.com/HbZvtSD.png" alt=""></p>
-<p>测试人员的发展主要有两个方向：一个是往管理的方向发展，另一个是往技术的方向发展，两个方向都给予了同等的重视程度，让测试人员可以选择自己喜欢而且适合自己的发展路线。在发展的初级阶段，两条路线要经历的阶段是一样的</p>
-<p>在微软的测试体系中主要把测试人员分为两类，一类是SDET，另一类是STE</p>
-<p><strong>SDET（Software Design Engineer）</strong>的编程能力基本是跟开发人员是一样的，然而SDET要求技术面要广可以使用很多技术来写程序</p>
-<p><strong>STE(Software Test Engineer)</strong>要求解决问题的能力特别强，有钻研精神，轻易不放弃，细心且有创造力。好的STE不是只按照规定好的测试用例来执行，而是可以想到很多一般用户想不到的地方，可以用非常规的思路来找出软件的Bug，并且善于多种工具测试</p>
-<h1 id="测试人员的性格特征"><a href="#测试人员的性格特征" class="headerlink" title="测试人员的性格特征"></a>测试人员的性格特征</h1><ol>
-<li>好奇心</li>
-<li>成就感</li>
-<li>消极思维</li>
-<li>全面的思维能力</li>
-<li>正确的态度</li>
-<li>责任感</li>
-<li>压力</li>
-</ol>
-<h1 id="测试人员的技能要求"><a href="#测试人员的技能要求" class="headerlink" title="测试人员的技能要求"></a>测试人员的技能要求</h1><p><img src="https://i.imgur.com/0jRmerF.png" alt=""></p>
-<h2 id="测试人员需要了解统一建模语言（UML）"><a href="#测试人员需要了解统一建模语言（UML）" class="headerlink" title="测试人员需要了解统一建模语言（UML）"></a>测试人员需要了解统一建模语言（UML）</h2><p>大部分软件开发组织都在使用统一的建模语言（UML）知道设计和开发。</p>
-<p>UML中的用例图可以知道测试人员进行功能测试，类图则可用于指导单元测试，状态图、协作图和活动图可用于知道测试用例的设计等</p>
-<h2 id="界面设计中的三种模型"><a href="#界面设计中的三种模型" class="headerlink" title="界面设计中的三种模型"></a>界面设计中的三种模型</h2><p>在界面设计中，通常有三种模型，包括设计者模型、实现者模型和用户模型</p>
-<ul>
-<li>设计者模型通常关注的是对象、表现、交互过程等。</li>
-<li>用户模型通常关注目标、信心、情绪等。</li>
-<li>实现者模型则更多地关注数据结构、算法、库等界面实现时要考虑的问题。<br><img src="https://i.imgur.com/o8jAF64.png" alt=""></li>
-</ul>
-<h2 id="文档能力"><a href="#文档能力" class="headerlink" title="文档能力"></a>文档能力</h2><p>转测试文档部分</p>
+<p>在配置文件的同级目录下常会出现一个叫SAMPLE的文件夹，里面会出现三个实例文件，我们在配置监听文件的时候根据这里配置即可。在这里只讲解基本配置，详细的配置请详见互联网</p>
+<h1 id="Listener-ora"><a href="#Listener-ora" class="headerlink" title="Listener.ora"></a>Listener.ora</h1><img src="/picture/A-superficial-analysis-of-oracle-01/2.png" class="[class names]">
+<h2 id="第一部分"><a href="#第一部分" class="headerlink" title="第一部分"></a>第一部分</h2><p>此参数指定侦听器的名称和它的收听地址。 此侦听器的其他参数我们用<lsnr>代替。 未指定时 <lsnr>的名称默认为“LISTENER”，默认值为地址值如下所示。<br><img src="/picture/A-superficial-analysis-of-oracle-01/3.png" class="[class names]"></lsnr></lsnr></p>
+<p>大多数情况下默认值都是保留的,在需要时我们要添加监听地址，那么久在ADDRESS_LIST=中添加以下类型，注意，在此处添加的监听地址在tnsnames.ora的对应位置也要添加</p>
+<figure class="highlight plain"><figcaption><span>监听地址</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(ADDRESS=(PROTOCOL=tcp)(HOST=监听的ip)(PORT=1521))   #端口 oracle默认端口为1521 </span><br></pre></td></tr></table></figure>
+<img src="/picture/A-superficial-analysis-of-oracle-01/4.png" class="[class names]">
+<h2 id="第二部分"><a href="#第二部分" class="headerlink" title="第二部分"></a>第二部分</h2><img src="/picture/A-superficial-analysis-of-oracle-01/5.png" class="[class names]">
+<p>SID_LIST_ &lt;lsnr&gt;  监听器为哪些进程（sid）服务，其中SID_NAME和ORACLE_HOME是必须的，他们的值与同名的环境变量相同，一般该部分都会有一部分系统默认生成的值，没什么必要的话可以留下</p>
+<figure class="highlight plain"><figcaption><span>监听进程</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(SID_NAME = orcl)</span><br><span class="line">   (ORACLE_HOME = E:\app\Administrator\product\11.2.0\dbhome_2)</span><br></pre></td></tr></table></figure>
+<img src="/picture/A-superficial-analysis-of-oracle-01/6.png" class="[class names]">
+<h2 id="另：ADR-BASE-LISTENER"><a href="#另：ADR-BASE-LISTENER" class="headerlink" title="另：ADR_BASE_LISTENER"></a>另：ADR_BASE_LISTENER</h2><p>   一些配置文件会有这个参数，此参数指定一个路径，指定跟踪和日志记录事件存储到的基本目录。详细请看<br><a href="https://docs.oracle.com/cd/B28359_01/network.111/b28317/listener.htm#NETRF400" target="_blank" rel="noopener">oracle文档——listener</a></p>
+<h1 id="tnsnames-ora"><a href="#tnsnames-ora" class="headerlink" title="tnsnames.ora"></a>tnsnames.ora</h1><img src="/picture/A-superficial-analysis-of-oracle-01/7.png" class="[class names]">
+<p>tnsnames.ora文件是一个配置文件，其中包含映射到本地命名方法的连接描述符的网络服务名称，或映射到侦听器协议地址的网络服务名称。网络服务名称是映射到连接描述符中包含的数据库网络地址的别名。 连接描述符包含通过协议地址的侦听器的位置以及要连接的数据库的服务名称。 客户端和数据库服务器（即其他数据库服务器的客户端）在与应用程序建立连接时使用网络服务名称。</p>
+<p>事实上此文件核心部分非常短 </p>
+<blockquote>
+<p>DESCRIPTION包含连接描述符，ADDRESS包含协议地址，CONNECT_DATA包含数据库服务标识信息。</p>
+</blockquote>
+<figure class="highlight plain"><figcaption><span>alias</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">对应图7中的&lt;alias&gt;,此处填写oracle 的sid即可= </span><br><span class="line"> 	(DESCRIPTION= </span><br><span class="line"> 	(ADDRESS=(protocol_address_information))   #此部分需要与listener部分对应</span><br><span class="line">   	(CONNECT_DATA= </span><br><span class="line">    	(SERVICE_NAME=对应service_name 网络服务名 ))) </span><br></pre></td></tr></table></figure>
+<img src="/picture/A-superficial-analysis-of-oracle-01/8.png" class="[class names]">
+<p>这里列出了一份配置好的tnsnames文件，2部分SERVER = DEDICATED用于指示侦听器将客户端连接到特定类型的服务处理程序的参数，此参数有三个可选值dedicated、shared、pooled 详见<br><img src="/picture/A-superficial-analysis-of-oracle-01/9.png" class="[class names]"></p>
+<p><a href="https://docs.oracle.com/cd/B28359_01/network.111/b28317/tnsnames.htm#NETRF289" target="_blank" rel="noopener">oracle文档——tnsnames</a></p>
+<p><strong>这里必须要说一下1部分</strong></p>
+<p>oracle启动时候需要一个叫做 init.ora后面一堆数字的文件，此文件躲在目录 oracle安装路径/pfile/  下<br><img src="/picture/A-superficial-analysis-of-oracle-01/14.PNG" class="[class names]"><br>其中有一行<br><img src="/picture/A-superficial-analysis-of-oracle-01/10.png" class="[class names]"></p>
+<p>指出对应的值，所以1部分请不要删除，如果删除可能会无法启动数据库并报错</p>
+<figure class="highlight plain"><figcaption><span>startup时报错</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ora-00119【ora-00119 invalid specification for system parameter】</span><br><span class="line"></span><br><span class="line">   ora-00132【syntax error or unresolved network name &apos;LISTENER_ORCL&apos;】</span><br></pre></td></tr></table></figure>
+<p>非要删除的话可以将init.oraxxxxxx这个文件中local_listener这行对应的值换为你在tnsnames.ora 的值（默认为local_listener=LISTENER_ORCL）</p>
+<figure class="highlight plain"><figcaption><span>local_listener</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">local_listener=(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))</span><br></pre></td></tr></table></figure>
+<p>之后每次启动数据库都要使用<br><figure class="highlight sql"><figcaption><span>修改后的启动命令</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">startup pfile='init文件绝对路径'</span><br><span class="line"></span><br><span class="line">例如 ：startup pfile='D:\app\jamb008\admin\orcl\pfile\init.ora.1132014143422'</span><br></pre></td></tr></table></figure></p>
+<h1 id="sqlnet-ora"><a href="#sqlnet-ora" class="headerlink" title="sqlnet.ora"></a>sqlnet.ora</h1><p>此文件的作用有<br>1.限制客户端访问（如指定客户端域为不允许访问） </p>
+<p>2.指定命名方法（local naming,directory nameing…）的优先级 </p>
+<p>3.启用日志及跟踪（log and trace）功能 </p>
+<p>4.通过特定进程来路由客户端连接 </p>
+<p>5.配置外部命名（第三方连接程序，如c语言写的）参数 </p>
+<p>6.配置Oracle的高级安全 </p>
+<p>7.使用协议特定的参数限制对数据库的访问 </p>
+<p>一般我们不会对此文件有太大的改动，详情请查看<a href="https://docs.oracle.com/cd/B28359_01/network.111/b28317/sqlnet.htm#NETRF183" target="_blank" rel="noopener">https://docs.oracle.com/cd/B28359_01/network.111/b28317/sqlnet.htm#NETRF183</a></p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="https://pinkamenadianelu.github.io">Mrlu</a>
-            </p><p>原文链接：<a href="https://pinkamenadianelu.github.io/2019/01/29/softwareTesting_1/">https://pinkamenadianelu.github.io/2019/01/29/softwareTesting_1/</a>
-            </p><p>发表日期：<a href="https://pinkamenadianelu.github.io/2019/01/29/softwareTesting_1/">January 29th 2019, 10:01:48 pm</a>
-            </p><p>更新日期：<a href="https://pinkamenadianelu.github.io/2019/01/29/softwareTesting_1/">January 30th 2019, 8:45:32 am</a>
+            </p><p>原文链接：<a href="https://pinkamenadianelu.github.io/2019/03/20/A-superficial-analysis-of-oracle-01/">https://pinkamenadianelu.github.io/2019/03/20/A-superficial-analysis-of-oracle-01/</a>
+            </p><p>发表日期：<a href="https://pinkamenadianelu.github.io/2019/03/20/A-superficial-analysis-of-oracle-01/">March 20th 2019, 4:02:13 pm</a>
+            </p><p>更新日期：<a href="https://pinkamenadianelu.github.io/2019/03/20/A-superficial-analysis-of-oracle-01/">March 20th 2019, 4:44:30 pm</a>
             </p><p>版权声明：我这属实是没啥版权，看个开心就行</p>
         </div>
     
@@ -451,17 +466,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/02/12/softwareTest2/" title="测试流程">
-                    <div class="nextTitle">测试流程</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/01/24/skm2/" title="支付宝收款码">
-                    <div class="prevTitle">支付宝收款码</div>
+                <a href="/2019/03/16/OperationsEngineer-oracle-02/" title="oracle表空间迁移">
+                    <div class="prevTitle">oracle表空间迁移</div>
                 </a>
             
         </li>
@@ -587,7 +597,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text"> 软件测试 —— 测试人员 </span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#项目型与职能型"><span class="toc-number">2.</span> <span class="toc-text">项目型与职能型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#综合型的测试组织"><span class="toc-number">3.</span> <span class="toc-text">综合型的测试组织</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试人员的发展"><span class="toc-number">4.</span> <span class="toc-text">测试人员的发展</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试人员的性格特征"><span class="toc-number">5.</span> <span class="toc-text">测试人员的性格特征</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#测试人员的技能要求"><span class="toc-number">6.</span> <span class="toc-text">测试人员的技能要求</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#测试人员需要了解统一建模语言（UML）"><span class="toc-number">6.1.</span> <span class="toc-text">测试人员需要了解统一建模语言（UML）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#界面设计中的三种模型"><span class="toc-number">6.2.</span> <span class="toc-text">界面设计中的三种模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文档能力"><span class="toc-number">6.3.</span> <span class="toc-text">文档能力</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#什么是Oracle监听器"><span class="toc-number">1.</span> <span class="toc-text">什么是Oracle监听器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Oracle监听器"><span class="toc-number">2.</span> <span class="toc-text">Oracle监听器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#环境变量"><span class="toc-number">3.</span> <span class="toc-text">环境变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Listener-ora"><span class="toc-number">4.</span> <span class="toc-text">Listener.ora</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一部分"><span class="toc-number">4.1.</span> <span class="toc-text">第一部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二部分"><span class="toc-number">4.2.</span> <span class="toc-text">第二部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#另：ADR-BASE-LISTENER"><span class="toc-number">4.3.</span> <span class="toc-text">另：ADR_BASE_LISTENER</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#tnsnames-ora"><span class="toc-number">5.</span> <span class="toc-text">tnsnames.ora</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#sqlnet-ora"><span class="toc-number">6.</span> <span class="toc-text">sqlnet.ora</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
