@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Mrlu">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Mrlu">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>oracle Professional001 · Hi bro!</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/favicon.jpg">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">应无所住，而生其心</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">oracle Professional001</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">应无所住，而生其心</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.png)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            oracle Professional001
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="oracleABC">oracleABC</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">4.1k</span>阅读时长: <span class="post-count reading-time">15 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/07/30</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="Oracle体系结构——001"><a href="#Oracle体系结构——001" class="headerlink" title="Oracle体系结构——001"></a>Oracle体系结构——001</h1><h2>引言</h2>
+
+<p>dba最头疼的莫过于数据库的故障与数据迁移，而oracle到目前为止能成为世界占有率最大的数据库也正是因为其数据的可靠性和完备的备份恢复机制，而这些功能是需要一段时间细心学习掌握的，想要更加深入的学习oracle首先要学习他的体系架构，了解其组成才能更好的应用并维护。</p>
+<p>为了更好的习惯Oracle，这里的一些特定名词使用英文，这样能更好的帮助我们在维护时理解错误情况并查阅联机文档</p>
+<h2>Oracle网络架构及应用环境</h2>
+
+<p>Oracle有一张非常经典的体系结构图</p>
+<p><img src="/imgs/001/1.png" alt=""></p>
+<p>数据库启动的第一步便是加载实例（Instance），读取参数文件并把一些程序调到内存中。实例由SGA（System Global Area）和后台进程组成，也就是上图的粉色框框中的内容</p>
+<p>所以按照顺序，我们第一步就来讲解Instance</p>
+<h2>Instance</h2>
+
+<p>在学习Instance之前必须明白一个概念，即Oracle Instance与Oracle数据库之间的区别，两个术语经常被混淆但事实上他们完全不是一个东西<br>Oracle数据库由文件组成，即数据文件（datafiles）和oracle的系统文件（system files），但这些文件本身没有什么意义，这就需要一套系统来提供处理能力和资源来操作这些文件中的数据，而这一组特定的、由Oracle在服务器上创建的进程与操作系统分配给它的存储想结合时，就得到了Oracle Instance。</p>
+<p>而我们常说的Oracle启动了，其实就是再说Oracle实例启动了，我们通过实例来访问数据库而一个数据库对应多个实例（常见于Oralce RAC），但一个实例只能对应一个数据库</p>
+<p>Instance由SGA和后台进程（backgroud process）组成，首先介绍SGA</p>
+<h3>系统全局区（System Global Area）</h3>
+
+<p><strong>以下简称SGA</strong></p>
+<blockquote><p>首先请查看Oracle关于SGA的联机文档</p>
+<footer><strong>5.1.4.1 System Global Area</strong><cite><a href="https://docs.oracle.com/database/121/ADMQS/GUID-A3319550-AB7A-4429-9A58-4B90E4B3D0F5.htm" target="_blank" rel="noopener">Oracle联机文档</a></cite></footer></blockquote>
+<p>其中一段话为：<br><blockquote><p>The System Global Area (SGA) is a group of shared memory structures, known as SGA components, that contain data and control information for one Oracle Database instance. The SGA is shared by all server and background processes. Examples of data stored in the SGA include cached data blocks and shared SQL areas.</p>
+<footer><strong>SGA</strong><cite>-Oracle联机文档</cite></footer></blockquote></p>
+<p>机翻一下就是：</p>
+<p>系统全局区域 (SGA) 是一组共享内存结构,称为 SGA 组件,其中包含一个 Oracle 数据库实例的数据和控制信息。SGA 由所有服务器和后台进程共享。存储在 SGA 中的数据示例包括缓存的数据块和共享 SQL 区域。</p>
+<p>我们可以将其粗略的理解为Instance中各个器官的集合，SGA中的主要器官共有6个</p>
+<h4>1. Shared Pool 共享池</h4>
+
+<p>Shared Pool是对SQL、PL/SQL进行语法解析、编译、执行的内存区域，它由库缓存（library cache）和数据字典缓存（data dictionary cache）组成，某种程度上讲Shared Pool的大小直接影响Oracle的性能。</p>
+<p>在library cache 中保存了SQL、PL/SQL语句的执行计划，当使用一样的语句的时候就不用再解析了（硬解析），也就减少了sql的成本</p>
+<p>数据字典（data dictionary）是Oracle非常重要的部分，由Oracle维护，因为需要经常访问的缘故ORacle将其放到缓存中，即data dictionary cache </p>
+<p>虽然Shared Pool能优化Oracle性能，但事实上并不是越大越好，这点在后文中将会讲解，一些工程师会将其设置在500M左右</p>
+<h4>2. Database buffer cache</h4>
+
+<p>Oracle中非常有名的Database buffer cache，以下简称为DB buffer。</p>
+<blockquote><p>Before data stored in the database can be queried or modified, it must be read from a disk and stored in the buffer cache. All user processes connected to the database share access to the buffer cache. For optimal performance, the buffer cache should be large enough to avoid frequent disk I/O operations.</p>
+<footer><strong>SGA</strong><cite>Oracle联机文档</cite></footer></blockquote>
+<p>在查询或修改数据库中存储的数据之前,必须从磁盘读取数据并存储在缓冲区缓存中。连接到数据库的所有用户进程共享对缓冲区缓存的访问。为获得最佳性能,缓冲区缓存应足够大,以避免频繁的磁盘 I/O 操作。</p>
+<p>数据库操作的时候会将数据文件（datafile）的数据块读到db buffer中，在dbbuffer中生成一个副本（读进程server process），如果这个数据块有改动就称这个块为脏块，在之后某段时间将他读回datafile进行更改（写进程DBWR）。而且当他人访问时如果该数据块整好在内存中，就可以直接读取</p>
+<p>db buffer中的有几个重要参数：</p>
+<h5>1. db_cache_size</h5>
+
+<p>指定标准块大小的内存空间<br>使用<br><figure class="highlight"><figcaption><span>查看标准块</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt;Show parameter block;</span><br></pre></td></tr></table></figure><br>查看参数</p>
+<p><img src="/imgs/001/2.png" alt=""></p>
+<p>在图中我们可以看到 </p>
+<pre><code>db_block_size  integer  8192
+</code></pre><p>在Oracle中标准快一般为8k，那么cache块中对应的参数是标准的db_cache_size，如果想要定义一个其他的块大小参数，标准块的name列也会随之更改，例如我们要定义一个16k大小的块参数，那么name列就会对应改为 db_16k_cache_size</p>
+<figure class="highlight sql"><figcaption><span>更改块大小为16k</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt;alter system set db_16k_cache_size=8m; --首先建立一个16kcache</span><br><span class="line"></span><br><span class="line">SQL&gt;create tablespace tbs_16k datafile  '/u01/app/oracle/oradata/orcl/block16k.dbf' size  10m blocksize 16k;--此时就能创建一个块大小为16k的表空间了</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/imgs/001/3.png" alt=""><br><img src="/imgs/001/4.png" alt=""><br>最后我们来看一下新创建的表空间<br><figure class="highlight"><figcaption><span>查看表空间及其块大小</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt;select tablespace_name,block_size from dba_tablespaces;</span><br></pre></td></tr></table></figure><br><img src="/imgs/001/5.png" alt=""></p>
+<h5>2. db_nk_cache_size</h5><br>指定非标准块大小内存空间<br><br>这里的nk就是指上面非标准块的名称，n代表数据块的大小<br>例如我们要定义一个16k大小的块参数，那么块就会对应命名为 db_16k_cache_size<br><br><h5>3. db_keep_cache_size</h5>
+
+
+<blockquote><p>首先请查看Oracle关于db_keep_cache_size的联机文档</p>
+<footer><strong>1.79 DB_KEEP_CACHE_SIZE</strong><cite><a href="https://docs.oracle.com/en/database/oracle/oracle-database/12.2/refrn/DB_KEEP_CACHE_SIZE.html#GUID-E304447C-C9A1-4F58-97BE-75566754DA15" target="_blank" rel="noopener">Oracle联机文档</a></cite></footer></blockquote>
+<p>在oracle中使用了一种算法（LRU Least Recently Used）将db buffer中长时间不用的块踢出去，而我们有一些表即使不常用也不想被清除处db buffer，如系统使用的一些字典表等，而db_keep_cache_size就存放了这些表并使他们不会被清除出db buffer</p>
+<figure class="highlight"><figcaption><span>将表放入db_keep_cache_size</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt;alter table lp.XT_JGB storage (buffer_pool keep);</span><br></pre></td></tr></table></figure>
+<p><img src="/imgs/001/6.png" alt=""><br><figure class="highlight"><figcaption><span>查看状态</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt;select segment_name,buffer_pool from dba_segments where segment_name='XT_JGB';</span><br></pre></td></tr></table></figure><br><img src="/imgs/001/7.png" alt=""></p>
+<h5>4. db_recycle_cache_size</h5>
+
+<blockquote><p>首先请查看Oracle关于db_recycle_cache_size的联机文档</p>
+<footer><strong>1.85 DB_RECYCLE_CACHE_SIZE</strong><cite><a href="https://docs.oracle.com/en/database/oracle/oracle-database/12.2/refrn/DB_RECYCLE_CACHE_SIZE.html#GUID-E05F28A8-C563-4FE6-8152-F27590D3314E" target="_blank" rel="noopener">Oracle联机文档</a></cite></footer></blockquote>
+<p>它与db_keep_cache_size相反，用于存放一些我们不希望它存放在db buffer中的表，这些表通常很大且不常访问，将其放在db buffer会影响性能<br><figure class="highlight"><figcaption><span>将表放入db_recycle_cache_size</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt;alter table lp.XT_JGB storage (buffer_pool recycle);</span><br></pre></td></tr></table></figure><br><img src="/imgs/001/8.png" alt=""><br>查看一下<br><img src="/imgs/001/9.png" alt=""></p>
+<p><strong>恢复默认</strong><br>使用<br>    alter table lp.XT_JGB storage (buffer_pool default);<br>将表恢复默认<br><img src="/imgs/001/10.png" alt=""></p>
+<p></p><h5>Hit Ratios 命中率</h5><br>Oracle命中率代表着数据库一条sql所查询的数据在内存中能被复用的百分比，有专家曾指出一个Oracle库命中率要在95%以上才算健康运行<del>（其实很少有库能这么高）</del><p></p>
+<blockquote><p>首先请查看Oracle关于 Buffer Pool Hit Ratios的联机文档</p>
+<footer><strong>7.2.6 Buffer Pool Hit Ratios</strong><cite><a href="https://docs.oracle.com/cd/E11882_01/server.112/e41573/memory.htm#PFGRF94281" target="_blank" rel="noopener">Oracle联机文档</a></cite></footer></blockquote>
+<blockquote><footer><strong>BHR</strong><cite><a href="http://dba-oracle.com/m_buffer_cache_hit_ratio.htm" target="_blank" rel="noopener">推荐阅读</a></cite></footer></blockquote>
+<p>使用视图V$BUFFER_POOL_STATISTICS;查看命中率</p>
+<figure class="highlight sql"><figcaption><span>查看命中率</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt;SELECT NAME, PHYSICAL_READS, DB_BLOCK_GETS, CONSISTENT_GETS, 1 - (PHYSICAL_READS / (DB_BLOCK_GETS + CONSISTENT_GETS)) "Hit Ratio"</span><br><span class="line">  FROM V$BUFFER_POOL_STATISTICS;</span><br></pre></td></tr></table></figure>
+<p><img src="/imgs/001/11.png" alt=""></p>
+<h4>3. Redo log buffer</h4>
+
+<p>(Redo log将在之后介绍，感兴趣可先查看oracle联机文档加以了解，其中scn、ARCHIVELOG、LGWR 在之后都会有所讲解)<br><blockquote><p>首先请查看Oracle关于 redo log的联机文档</p>
+<footer><strong>What Is the Redo Log?</strong><cite><a href="https://docs.oracle.com/cd/B28359_01/server.111/b28310/onlineredo001.htm#ADMIN11302" target="_blank" rel="noopener">Oracle联机文档</a></cite></footer></blockquote></p>
+<p>日志条目（redo entries）记录了数据库的所有修改信息（包括DML和DDL），为的是数据库恢复，日志条目首先产生于日志缓冲区（Redo log buffer）。日志缓冲区一般较小，它是以字节为单位的，但是它极其重要</p>
+<p>Redo log buffer大小最好为3M（原因会在LGWR处介绍）。需要手动设置，设置之后需要重启数据库，显示时按照字节显示</p>
+<p>使用 SHOW PARAMETER log_buffer;查看Redo log buffer当前大小<br><img src="/imgs/001/12.png" alt=""><br>Redo log buffer有一个最小值，我们可以用log_buffer=1的方法设置<br><figure class="highlight"><figcaption><span>设置redo log buffer的值</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt;alter system set log_buffer=1 scope=spfile;</span><br></pre></td></tr></table></figure><br><img src="/imgs/001/13.png" alt=""><br>之后重启即可<br>在实验中我们可以使用startup force重启，但是生产环境中千万不要使用该命令！</p>
+<h4>4. Large pool（可选）</h4>
+
+<blockquote><footer><strong>What is the Oracle large pool and how is the large pool used within the SGA?</strong><cite><a href="http://dba-oracle.com/t_large_pool.htm" target="_blank" rel="noopener">推荐阅读</a></cite></footer></blockquote>
+<p>为了进行大的后台进程操作而分配的内存空间，与shared pool管理不同，主要用于并行查询、RMAN备份恢复、以及共享链接等</p>
+<p>虽然是可选的，但是并行查询的时候需要用到，并行查询需要机器有多个cpu，将一个select语句分割开查询，可以大幅度优化查询速度（可达100倍）</p>
+<h4>5. Java pool（可选）</h4>
+
+<blockquote><footer><strong>java pool advice tips</strong><cite><a href="http://dba-oracle.com/t_java_pool.htm" target="_blank" rel="noopener">推荐阅读</a></cite></footer></blockquote>
+<p>为了java虚拟机以及应用而分配的内存空间，包含了大量java代码</p>
+<h4>6. Stream pool 流池（可选）</h4><br><blockquote><footer><strong>question：streams pool</strong><cite><a href="https://community.oracle.com/thread/2427270" target="_blank" rel="noopener">推荐阅读</a></cite></footer></blockquote><br><blockquote><footer><strong>wiki-Oracle Streams</strong><cite><a href="http://www.orafaq.com/wiki/Oracle_Streams" target="_blank" rel="noopener">详细</a></cite></footer></blockquote><br><br>为了<del>steam</del>  Stream应用而分配的空间，stream技术是为了在不同数据库之间共享数据，因此，它只对使用了stream数据库特性的系统是重要的<br><br><h4>SGA的自动管理</h4><br>Oracle10G开始有了SGA自动管理功能，相关的pool可以动态调整大小<br>参数：<br><br>sga_max_size: SGA的最大物理空间<br>sga_target:SGA最大可达到空间，sga_target&lt;=sga_max_size,设定这个值&gt;0时就使能了SGA的自动管理<br><br>sga_target是sga可使用的物理空间而sga_max_size是sga使用空间的上线，sga_target不可以超过sga_max_size<br><br><br>可以查看参数workarea_size_policy来确定是否开启了自动管理，当value为AUTO则说明开启，数据库是默认开启的<br><figure class="highlight"><figcaption><span>查看数据库是否开启了sga自动管理</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt;show parameter workarea_size_policy;</span><br></pre></td></tr></table></figure><br><br><img src="/imgs/001/14.PNG" alt=""><br><br>也可以使用 show parameter sga;查看其中sga_target的值，如果为0的话，说明开启了sga自动管理<br><img src="/imgs/001/15.PNG" alt=""><br><br>在这里还要交代一个概念：granules（颗粒） 它是oracle内存的最小单位,而SGA分配空间时，分配的大小大多都是granules 的整数倍数<br>当sga_max_size &lt; 1G 时 granules为4M<br><br>当sga_max_size &gt; 1G 时 granules为16M<br><br>我们可以查看动态试图v$sgainfo来查看当前SGA对不同Pool的分配情况<br><figure class="highlight"><figcaption><span>查看数据库当前SGA的分配情况</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; select name,bytes/1024/1024 "size(M)" from v$sgainfo;</span><br></pre></td></tr></table></figure><br><br><br><img src="/imgs/001/16.PNG" alt=""><br><br><h2>Oracle Process </h2><br>Oracle的进程分为三种：1）user process;2)server process;3)background process<br><br><h3>user process</h3><br>客户端进程，用户登录时候就会生成一个user process,一般分为三种形式：<br>1. sqlPlus: 使用sqlplus登录<br>2. 应用程序：如plsql Developer，还有你的应用项目<br>3. web方式：OEM访问<br><br>有user process造成的会话中止，系统将自动回滚这个会话上的处于活动状态的事务，如没提交的DDL操作<br><br>我们使用sqlplus登录时可以使用OS命令来查看用户进程<br>如linux使用ps -ef|grep sqlplus 来查看<br><br><blockquote><p>ps是linux中常见的查看进程命令，详情请查看</p>
+<footer><strong>ps命令</strong><cite><a href="https://man.linuxde.net/ps" target="_blank" rel="noopener">linxu命令大全</a></cite></footer></blockquote><br><br><img src="/imgs/001/17.PNG" alt=""><br><br><h3>server process</h3><br><br>server process:服务端的进程，user process不能直接访问Orale，必须通过相应的server process访问实例，进而访问数据库<br><br>现在大多一个server process对应一个user process ，是一对一关系，当一对多关系时候，叫做共享进程<br><br>Plsql Developer登录时就会产生一个server process，新建一个窗口后又会再新建一个server process<br><br>我们使用sqlplus登录时可以使用OS命令来查看服务端进程<br>如linux我们可使用ps -ef|grep LOCAL 来查看<br><img src="/imgs/001/18.PNG" alt=""><br><br>在linux中我们可以判断此链接是本地链接还是远程链接，在这张截图中出现了四行其中（LOCAL=YES）为本地链接，而其余三行（LOCAL=NO）为远程链接<br><br>可以使用动态视图v$process来查看Oracle中的进程<br><br><figure class="highlight"><figcaption><span>查看Oracle中的进程</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; SELECT pid,program,background FROM v$process</span><br></pre></td></tr></table></figure><br>其中字段background 为1 说明他是一个后台进程，为null则为server process<br><img src="/imgs/001/19.PNG" alt=""><br><br><br>还有一种方法就是使用OS的命令查看所有进程，例如linux可使用ps -ef|grep ora<br><img src="/imgs/001/20.PNG" alt=""><br><br><h3>background process</h3><br>后台进程,先看一下oracle官网的图<br><img src="/imgs/001/backgroundProcess.PNG" alt=""><br><br><h4>PMON process</h4><br>Process Monitor process<br><img src="/imgs/001/pmon.png" alt=""><br>当客户端断掉时 pmon会查找对应的pga将其收回，清道夫<br><h4>SMON  process</h4><br>System Monitor process<br><img src="/imgs/001/smon.png" alt=""><br>实例崩溃时，再次重启需要实例恢复，SMON负责监管实例恢复进程(实例恢复是oracle还原很重要的一步，详情会在之后讲解)<br><h4>DBWR process</h4><br><img src="/imgs/001/dbwr.png" alt=""><br><br>DBWR主要将内存中的数据（脏块）写到datafile中，不是脏块不写；<br>当发生以下几种状况时，dbwr会写<br>1. ckpt发生（检查点 之后介绍）<br>2. 脏块太多<br>3. db_buffer自由空间(free)不够时<br>4. 每3秒（3秒是一个阀值，每三秒检查以下是否需要写，如果不需要写就不写等三秒后再检查以下）<br>5. 表空间redo only/offline/backup 等操作时<br><br>Dbwr其实是能不行就不写的，实际的时候也是能不写就不写<br><br><br><br><strong>注意！oracle中的读进程跟写进程不是一个；Commit不会使dbwr有动作</strong><br><br>另附：很多地方叫做DBW<strong>N</strong>（包括官网），这也是正确的，事实上此进程有多个，从DBW0开始排列<br><br><img src="/imgs/001/21.PNG" alt=""><br><img src="/imgs/001/22.PNG" alt=""><br><h4>LGWR process</h4><br><img src="/imgs/001/lgwr.png" alt=""><br>日志写，把redo log buffer里的日志记录到redo log files中（从内存写道磁盘中）<br><br>Update语句会产生日志，但是不会将日志写入磁盘，只有写commit 的时候，才会将日志写入到磁盘中（后面几个条件达成时，不需要commit也会写）<br>LGWR执行的条件：<br>1. commit<br>2. 三分之一满（当redo log buffer被占用达三分之一时）<br>3. 1M满（当redo log buffer被占用达1M时）<br>4. 先于DBWR写而写（先记后写，即dbwn正好要写入前，执行DBWR写入日志）<br>5. 3秒（由条件4触发）<br><br>之前在redo log buffer部分说过Redo log buffer大小最好为3M，这是因为LGWR每满1M写入一次，而条件2为每三分之一满的时候写入一次，那么当Redo log buffer大小为3M时条件2与3就合并了<br><br>3秒是因为dbwr每3s写一下，由于先记后写机制（先再redo log files里记录日志，然后再再data files里写入脏块），而DBWR的写入机制就时每3S写入一次<br><br><blockquote><p>When a user issues a COMMIT statement, LGWR puts a commit record in the redo log buffer and writes it to disk immediately, along with the transaction’s redo entries. The corresponding changes to data blocks are deferred until it is more efficient to write them. This is called a fast commit mechanism. The atomic write of the redo entry containing the transaction’s commit record is the single event that determines the transaction has committed. Oracle returns a success code to the committing transaction, although the data buffers have not yet been written to disk.</p>
+<footer><strong>LGWR</strong><cite>Oracle联机文档</cite></footer></blockquote><br><br>由条件1可得知，我们在一次进行多条DDl操作时，应频繁commit，以提高性能<br><br><br><br><h4>CKPT process</h4>
+
+<p><img src="/imgs/001/ckpt.png" alt=""></p>
+<p>检查点，负责协调读一致性，督促dbwr写脏块，当检查点发生时直接影响dbwr，然后由dbwr间接影响lgwr；当数据库正常关机时，会将内存中的所有脏块都写入磁盘，再开机的时候会检查磁盘数据的完整性，此时由ckpt进程来负责检查(check point的详细操作将在之后oracle的备份恢复中详细介绍)</p>
+<p></p><h4>Others</h4><br>一些其他的后台进程，目前了解即可<p></p>
+<ol>
+<li>arcn：归档模式下，发生日志切换时，把当前日志组中的内容写入归档日志，作为备份历史日志（只要lgwr（负责联机日志写）和arcn（负责联机日志读）操作日志，其他进程与日志文件不接触）</li>
+<li>MMON：Oracle自我检视和自我调整的支持进程，与AWR有关（11g new）</li>
+<li>MMNL：MMON的辅助进程，与ASN有关（11g new）</li>
+<li>MMAN：内存自动管理，在11G中的到加强，负责Oracle内存结构（SGA+PGA）的自动调整</li>
+<li>CJQN：与job队列有关</li>
+</ol>
+<p></p><h3>PGA</h3><br>User process给server process 发出请求，然后在pga中给其分配一块私有空间，PGA和SGA的内存占比是自动调整的<br>与SGA不同，PGA时独立的，非共享<br>PGA不属于实例，SGA和PGA组成oracle的内存结构<p></p>
+<blockquote><footer><strong>Owiki PGA www.orafaq/wiki/PGA 推荐阅读</strong></footer></blockquote>
+<blockquote><footer><strong>Oracle Memory Architecture Internals(SGA & PGA)</strong><cite><a href="https://databaseinternalmechanism.com/oracle-database-internals/oracle-memory-architecture-sga-pga/" target="_blank" rel="noopener">推荐阅读</a></cite></footer></blockquote>
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://pinkamenadianelu.github.io">Mrlu</a>
+            </p><p>原文链接：<a href="https://pinkamenadianelu.github.io/2019/07/30/Oracle001/">https://pinkamenadianelu.github.io/2019/07/30/Oracle001/</a>
+            </p><p>发表日期：<a href="https://pinkamenadianelu.github.io/2019/07/30/Oracle001/">July 30th 2019, 2:41:22 pm</a>
+            </p><p>更新日期：<a href="https://pinkamenadianelu.github.io/2019/07/30/Oracle001/">July 30th 2019, 2:52:44 pm</a>
+            </p><p>版权声明：我这属实是没啥版权，看个开心就行</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/03/20/A-superficial-analysis-of-oracle-01/" title="浅析oracle中的监听文件">
+                    <div class="prevTitle">浅析oracle中的监听文件</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:2578898518@qq.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/PinkamenaDianeLu" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/example_qr.png">
+                </span>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer qq" title="qq">
+                  
+                  <img class="profile-qr" src="/assets/qrcode_1548210605933.jpg">
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Oracle体系结构——001"><span class="toc-number">1.</span> <span class="toc-text">Oracle体系结构——001</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">Oracle网络架构及应用环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.</span> <span class="toc-text">Instance</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.1.</span> <span class="toc-text">系统全局区（System Global Area）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">1. Shared Pool 共享池</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">2. Database buffer cache</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.1.2.1.</span> <span class="toc-text">1. db_cache_size</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.1.2.2.</span> <span class="toc-text">2. db_nk_cache_size</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.1.2.3.</span> <span class="toc-text">3. db_keep_cache_size</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.1.2.4.</span> <span class="toc-text">4. db_recycle_cache_size</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.1.2.5.</span> <span class="toc-text">Hit Ratios 命中率</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">3. Redo log buffer</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.1.4.</span> <span class="toc-text">4. Large pool（可选）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.1.5.</span> <span class="toc-text">5. Java pool（可选）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.1.6.</span> <span class="toc-text">6. Stream pool 流池（可选）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.1.7.</span> <span class="toc-text">SGA的自动管理</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.</span> <span class="toc-text">Oracle Process </span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.1.</span> <span class="toc-text">user process</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.2.</span> <span class="toc-text">server process</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.3.</span> <span class="toc-text">background process</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">PMON process</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">SMON  process</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.3.3.</span> <span class="toc-text">DBWR process</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.3.4.</span> <span class="toc-text">LGWR process</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.3.5.</span> <span class="toc-text">CKPT process</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.3.6.</span> <span class="toc-text">Others</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.4.</span> <span class="toc-text">PGA</span></a></li></ol></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 12
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/30</span><a class="archive-post-title" href="/2019/07/30/Oracle001/">oracle Professional001</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/20</span><a class="archive-post-title" href="/2019/03/20/A-superficial-analysis-of-oracle-01/">浅析oracle中的监听文件</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span><a class="archive-post-title" href="/2019/03/16/OperationsEngineer-oracle-02/">oracle表空间迁移</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href="/2019/03/11/oracle103/">oracle103</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span><a class="archive-post-title" href="/2019/03/07/OperationsEngineer-oracle-01/">记录一次dmp导入数据库</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span><a class="archive-post-title" href="/2019/03/07/oracle101/">oracle101</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span><a class="archive-post-title" href="/2019/03/07/oracle102/">oracle102</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href="/2019/02/15/softwareTesting3/">软件测试的基本方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/12</span><a class="archive-post-title" href="/2019/02/12/softwareTest2/">测试流程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/29</span><a class="archive-post-title" href="/2019/01/29/softwareTesting_1/">测试人员</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/24</span><a class="archive-post-title" href="/2019/01/24/skm2/">支付宝收款码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/24</span><a class="archive-post-title" href="/2019/01/24/skm/">微信收款码</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="O&S"><span class="iconfont-archer">&#xe606;</span>O&S</span>
+    
+        <span class="sidebar-tag-name" data-tags="Superficial analysis"><span class="iconfont-archer">&#xe606;</span>Superficial analysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="oracleABC"><span class="iconfont-archer">&#xe606;</span>oracleABC</span>
+    
+        <span class="sidebar-tag-name" data-tags="skm"><span class="iconfont-archer">&#xe606;</span>skm</span>
+    
+        <span class="sidebar-tag-name" data-tags="softwareTesting"><span class="iconfont-archer">&#xe606;</span>softwareTesting</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Mrlu"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
