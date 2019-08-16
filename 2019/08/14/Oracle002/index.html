@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Mrlu">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Mrlu">
+    
+    <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>oracle Professional002 · Hi bro!</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/favicon.jpg">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin="">
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin="">
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">应无所住，而生其心</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">oracle Professional002</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">应无所住，而生其心</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.png)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            oracle Professional002
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="oracleABC">oracleABC</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">3k</span>阅读时长: <span class="post-count reading-time">10 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/08/14</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="Oracle体系结构——002"><a href="#Oracle体系结构——002" class="headerlink" title="Oracle体系结构——002"></a>Oracle体系结构——002</h1><h2>引言</h2>
+
+<p>初学数据库的时候最害怕不知道改了什么东西导致数据库起不来了，这种事情在我学习的过程中发生了无数次，这里我将简单的介绍oracle的启动过程</p>
+<h2>Oracle参数文件</h2>
+
+
+<p>在数据库启动时会在一个特定配置文件中指定Oracle实例的初始化参数，这个文件即是参数文件。每次启动数据库的时候要求参数文件是完好的，参数文件中的参数会用于SGA对内存设置的自动调整</p>
+<p>参数文件分为静态参数文件和动态参数文件，多放在$ORACLE_HOME/dbs下<br><img src="/imgs/002/1.PNG" alt=""></p>
+<p>我们现在大多都使用动态参数文件，（在9i之前使用静态参数文件）；而静态参数文件需要重启实例才能生效</p>
+<p>动态参数文件，也称为服务器参数文件（server parameter file）或SPFILE。它是一个包含初始化参数的二进制文件。在SPFILE中可说明实例的内存限制、控制文件位置，归档日志是否保存及保存的位置，以及其他一些决定Oracle数据库服务器行为的设置，他们多以spfile+SID.ora命名，如上图的  spfileorcl.ora。动态参数文件的优点就是可以在实例启动的情况下有<strong>一部分参数</strong>可以直接修改并生效</p>
+<p>在9i之前我们使用静态参数文件，也被称为初始化参数文件（PFILE），是一个包含所有初始化参数列表的文本文件，可以用文本编译器直接修改。他们多命名为init+SID.ora，修改后要重启数据库实例才能生效<br><img src="/imgs/002/2.PNG" alt=""><br>一部分PFILE：<br><img src="/imgs/002/3.PNG" alt=""><br>其实我们也可以使用strings命令来查看SPFILE中的内容：</p>
+<blockquote><p>strings命令，详情请查看</p>
+<footer><strong>strings命令</strong><cite><a href="https://man.linuxde.net/strings" target="_blank" rel="noopener">linxu命令大全</a></cite></footer></blockquote>
+<p><img src="/imgs/002/4.PNG" alt=""></p>
+<h3>SPFILE与PFIE的区别</h3>
+
+<p><strong>SPFILE</strong>:</p>
+<ol>
+<li>二进制文件，不可以用编辑器修改</li>
+<li>在linux下可使用strings命令查看</li>
+<li>命名方式：spfile+SID.ora</li>
+<li>有一部分参数可以直接修改并参数</li>
+<li>9i版本之后支持</li>
+</ol>
+<p><strong>PFILE</strong>：</p>
+<ol>
+<li>文本文件，可以直接用编译器修改</li>
+<li>修改参数必须关闭实例，下次重启才能生效</li>
+<li>命名方式：init+SID.ora</li>
+<li>多在9i之前使用</li>
+</ol>
+<h3>如何查看数据库以哪种参数文件启动</h3>
+
+<p>查看参数spfile，如果这个参数有值，那么就是动态参数文件启动，反之为PFILE启动<br><figure class="highlight"><figcaption><span>查看数据库以哪种参数文件启动</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; show parameter spfile;</span><br></pre></td></tr></table></figure><br><img src="/imgs/002/5.PNG" alt=""><br><img src="/imgs/002/6.PNG" alt=""></p>
+<h3>PFILE与SPFILE互相生成</h3>
+
+<p>PFILE和SPFILE是可以互相生成的</p>
+<blockquote><p>首先请查看Oracle关于CREATE PFILE的联机文档</p>
+<footer><strong>CREATE PFILE</strong><cite><a href="https://docs.oracle.com/en/database/oracle/oracle-database/18/sqlrf/CREATE-PFILE.html#GUID-C01CBA1C-F477-49BE-AD58-F2FED046D561" target="_blank" rel="noopener">Oracle联机文档</a></cite></footer></blockquote>
+<blockquote><p>首先请查看Oracle关于CREATE SPFILE的联机文档</p>
+<footer><strong>CREATE SPFILE</strong><cite><a href="https://docs.oracle.com/en/database/oracle/oracle-database/18/sqlrf/CREATE-SPFILE.html#GUID-D3E295B7-A3A4-43D3-8BBD-5CBE171A2E52" target="_blank" rel="noopener">Oracle联机文档</a></cite></footer></blockquote>
+<figure class="highlight"><figcaption><span>通过内存生成参数文件</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; create pfile from spfile；--利用spfile生成pfile</span><br><span class="line"></span><br><span class="line">SQL&gt; create spfile from pfile；--利用pfile生成spfile</span><br></pre></td></tr></table></figure>
+<p><img src="/imgs/002/7.PNG" alt=""><br><img src="/imgs/002/10.PNG" alt=""><br>但是如果实例使用spfile启动后就不能在线生成spfile，否则报错ORA-32002</p>
+<p><img src="/imgs/002/8.PNG" alt=""></p>
+<p>在11g的版本中，可以通过内存生成spfile和pfile</p>
+<figure class="highlight"><figcaption><span>参数文件互相生成</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; create pfile from memory；</span><br><span class="line"></span><br><span class="line">SQL&gt; create spfile from memory；</span><br></pre></td></tr></table></figure>
+<p><img src="/imgs/002/9.PNG" alt=""><br>当然，通过spfile启动的实例也会出现相同的问题</p>
+<p>startup时读取参数文件，找到$ORACLE_HOME/dvs目录，顺序是优先spfile启动，没有spfile才从pfile启动。当有了spfile时，pfile一般留作备用，特殊情况也可以使用pfile启动</p>
+<figure class="highlight"><figcaption><span>使用pfile启动</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; startup pfile=$ORACLE_HOME/dbs/initSID.ora  --init + SID +.ora 文件  </span><br></pre></td></tr></table></figure>
+<h2>动态参数与静态参数</h2>
+
+<p>Oracle11g有300多个常用参数；当spfile读到内存后，有一部分参数是可以直接在内存中修改，并立即生效，这样的参数又叫动态参数。除了动态参数都是静态参数，静态参数的修改必须修改init.ora文件然后重启数据库才能生效</p>
+<h3>修改spfile的方法</h3><br>有三种可以修改动态参数值的方法，分别使用ALTER SESSION、ALTER SYSTEM和ALTER SYSTEM …. DEFERRED 命令<br><br><br>1. 使用 ALTER SESSION命令<br><br>ALTER SESSION命令允许在发布命令的会话中更改动态参数的值。ALTER SESSION 命令只是用来临时更改参数的值<br><br><figure class="highlight"><figcaption><span>ALTER SESSION</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; ALTER SESSION SET parameter_name=value;--parameter_name 为参数名   value为要设置的值</span><br></pre></td></tr></table></figure><br><br>2. 使用ALTER SYSTEM语句<br><br>ALTER SYSTEM语句会更改所有会话的参数值。但是这些更改仅在实例运行中存在。除非修改init.ora文件或使用SPFILE，否则如果重启数据库，更改会失效<br><br><figure class="highlight"><figcaption><span>ALTER SYSTEM</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; ALTER SYSTEM SET parameter_name=value  scope=memory|spfile|both;--parameter_name 为参数名   value为要设置的值</span><br></pre></td></tr></table></figure><br><br>第一种： scope=memory  参数修改立即生效，但不更改spfile文件<br><br>第二种： scope=spfile  修改了spfile文件，重启后生效（如果不使用此参数，将无法更改静态参数）<br><br>第三种： scope=both  前两种都满足<br><br>并不是所有参数都可以使用scope=memory的，判断方法在后面介绍。<br>如果不写scope=   缺省值为both<br><br>3. 使用ALTER SYSTEM …. DEFERRED 语句<br><br>ALTER SYSTEM …. DEFERRED语句将使一个新值对所有会话生效，但不是立即生效。它仅对执行此语句后启动的会话有效。所有当前打开的会话将继续使用旧的参数值<br><br><figure class="highlight"><figcaption><span>ALTER SYSTEM</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; ALTER SYSTEM SET parameter_name=value  DEFERRED ;</span><br></pre></td></tr></table></figure><br><br><br><h3>判断参数的修改级别</h3><br>可以通过视图v$parameter来查看哪些参数可以在memory修改<br><img src="/imgs/002/13.PNG" alt=""><br><img src="/imgs/002/12.PNG" alt=""><br><br>其中参数ISSYS_MODIFIABLE对应alter system命令，即系统级修改<br><img src="/imgs/002/14.PNG" alt=""><br><figure class="highlight sql"><figcaption><span>ISSYS_MODIFIABLE</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">IMMEDIATE			//对应scope=memory</span><br><span class="line">FALSE				//对应scope=spfile，即修改spfile文件，下次启动才生效</span><br><span class="line">DEFERRED			//对其他session有效</span><br></pre></td></tr></table></figure><br><br>ISSES_MODIFIABLE参数，对应alter session命令，即session级修改<br><img src="/imgs/002/15.PNG" alt=""><br><br><figure class="highlight sql"><figcaption><span>ISSYS_MODIFIABLE</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TRUE			//表示可以修改</span><br><span class="line">FALSE			//表示不可以修改</span><br></pre></td></tr></table></figure><br><br>举个例子，假如我想看log_buffer参数的修改级别<br><figure class="highlight"><figcaption><span>查看修改级别</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; select name,isses_modifiable,issys_modifiable  from v$parameter where name='log_buffer';</span><br></pre></td></tr></table></figure><br><img src="/imgs/002/16.PNG" alt=""><br>由此可以看出log_buffer参数在session方式下不可修改，在system方式的memory也不能改，both当然也不行，只有scope=spfile才可以<br><br><h2>数据库启动阶段</h2><br>数据库启动分三个阶段：nomount阶段、mount阶段、open阶段；当我们刚进入系统没有启动实例的时候叫做空闲进程，此时系统中是没有oracle进程的<br><br>我们可以查看数据库当前的启动阶段<br><figure class="highlight"><figcaption><span>查看当前启动阶段</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; select status from v$instance；</span><br></pre></td></tr></table></figure><br><img src="/imgs/002/17.PNG" alt=""><br><br><h3>nomount阶段</h3><br>在sqlplus会话中使用startup nomount命令启动数据库，这样启动仅有实例运行。如果以这种方式打开数据库将不会读控制文件，而且数据文件不打开。操作系统启动Oralce后台进程，并且给Oracle分配SGA。事实上只有instance本身在运行<br><br><img src="/imgs/002/18.PNG" alt=""><br><br><h3>mount阶段</h3> 
+
+<p>在启动过程中，实例启动后的下一步是安装数据库。在安装步骤中，Oracle把实例与数据库关联。Oralce打开并读取控制文件，获取database files和redo log files的名称和位置。在nomount阶段可以使用ALTER DATABASE MOUNT命令进入该阶段</p>
+<p><img src="/imgs/002/19.PNG" alt=""></p>
+<p>进入mount阶段就可以读取很多视图了，在进行诸如全数据库恢复、更改数据库归档模式或重命名数据库文件这一类活动时，通常需要进入mount阶段修改</p>
+<h3>open阶段</h3> 
+
+<p>启动过程的最后一步是打开数据库，用数据文件（datafile）和CTL的头部进行对比，比较scn确定一致性，如果一致就可以打开，否则需要实例恢复。当数据库以open模式启动的时候，所有有效用户都可以连接数据库并进行操作了；在此步骤之前一般用不能连接数据库。进入open阶段代表数据库已经启动完成<br><img src="/imgs/002/20.PNG" alt=""><br>对比两张视图中checkpoint_change是否一致</p>
+<p>也可以查看v$datafile视图中的last_change#列是否为空，如果（在mount阶段）为空的话也需要实例恢复。</p>
+<p>Last_change#平时是空的，当关闭数据库的时候会将checkpoint_change的值复制给last_change#，而突然关闭的时候来不及将checkpoint_change的值给last_change<br><img src="/imgs/002/21.PNG" alt=""><br>图中为mount阶段的数据库（左）和open阶段的数据库（右），Last_change#的不同</p>
+<p>这就好比一个人知道自己什么时候死会留下遗书，但是如果突然暴毙，还什么都没交代就GG了，那么就什么都没留下</p>
+<p>在此阶段使用alter database open  启动至open阶段</p>
+<p><img src="/imgs/002/22.PNG" alt=""></p>
+<h2>数据库的关闭</h2>
+
+<p>关闭数据库有四种可用的方式，分别是SHUTDOWN NORMAL、SHUTDOWN TRANSACTIONAL、SHUTDOWN IMMEDIATE、SHUTDOWN ABORT 四个命令</p>
+<h3>SHUTDOWN NORMAL</h3><br>在使用SHUTDOWN NORMAL命令关闭数据库时，Oracle将在关闭数据库之前等待所有用户断开与数据库的连接。如果某个用户在登录数据库之后休假了一直挂着，而你却使用了SHUTDOWN NORMAL命令，那么在该用户休假回来关闭自己的连接之前数据库将一直运行。而normal方式也是Oracle数据库的默认关闭方式<br><br>- 一旦发布此命令，再不能对数据库进行新的用户连接<br>- 在关闭数据库之前，Oracle等待所有用户退出Session（会话）<br>- 重启数据库时不需要实例恢复，因为会把redo buffer和db buffer都写入磁盘<br>- Oracle关闭数据库文件并终止后台进程，Oracle的SGA被解除分配<br><br><br><h3>SHUTDOWN TRANSACTIONAL</h3>
+
+<p>如果不想为了等待用户断开session而花费时间，可以使用SHUTDOWN TRANSACTIONAL命令。Oracle将在断开所有用户与数据库的连接前等待所有的活动事物完成，然后关闭数据库</p>
+<ul>
+<li>一旦发布此命令，不允许任何用户进行新连接</li>
+<li>现有用户不能启动新事物，并且将断开连接</li>
+<li>如果有一个活动的事物，在断开改用户的连接前，Oracle将等待直到该事物完成</li>
+<li>在所有事物完成后，Oralce关闭实例并释放内存，Oracle将所有redo buffer和db buffer写入磁盘</li>
+<li>再启动不需要实例恢复<h3>SHUTDOWN IMMEDIATE</h3>
+
+</li>
+</ul>
+<p>前面的两种并不常用，而SHUTDOWN IMMEDIATE为最常用的关库命令。在SHUTDOWN IMMEDIATE方式下，Oracle将不再等待用户的退出和事物的执行完毕，而是直接回滚所有事物并断开连接，之后关闭数据库</p>
+<ul>
+<li>一旦发布此命令，不允许任何用户进行新连接</li>
+<li>立即断开所有的用户session</li>
+<li>终止所有正在执行的事物</li>
+<li>对于所有当前执行的事物，Oralce将进行回滚，使数据库保持一致。这个回滚动作也就是SHUTDOWN IMMEDIATE并不能立即关闭数据库的原因，当然如果没有活动事物，那么SHUTDOWN IMMEDIATE还是可以很快的关闭数据库</li>
+<li>再启动不需要实例恢复</li>
+</ul>
+<h3>SHUTDOWN ABORT</h3>
+
+<p>生产环境下决不能使用此命令！SHUTDOWN ABORT既不断开session也不回滚transaction，直接关闭数据库，一般数据库出现严重宕机时才会考虑使用此命令“跳水”</p>
+<ul>
+<li>一旦命令发布，不允许进行新连接</li>
+<li>现有会话终止，不管是否有活动的事物</li>
+<li>不回滚被终止的事物</li>
+<li>不将redo buffer和db buffer写入磁盘</li>
+<li>终止后台进程、立即释放内存并关闭数据库</li>
+<li>在重启时需要实例恢复，在大多情况下不需要显式的recover，因为数据库会自己进行实例恢复（实例恢复在之后的备份还原中详细介绍）</li>
+</ul>
+<h3>STARTUP FORCE</h3>
+
+<p>硬性重启，可以跟参数，相当于SHUTDOWN ABORT后再输入startup [nomount|mount|open]，参数即使数据库启动的三个阶段，不写的话就直接运行到open状态</p>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://pinkamenadianelu.github.io">Mrlu</a>
+            </p><p>原文链接：<a href="https://pinkamenadianelu.github.io/2019/08/14/Oracle002/">https://pinkamenadianelu.github.io/2019/08/14/Oracle002/</a>
+            </p><p>发表日期：<a href="https://pinkamenadianelu.github.io/2019/08/14/Oracle002/">August 14th 2019, 2:59:11 pm</a>
+            </p><p>更新日期：<a href="https://pinkamenadianelu.github.io/2019/08/14/Oracle002/">August 15th 2019, 5:23:46 pm</a>
+            </p><p>版权声明：我这属实是没啥版权，看个开心就行</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/08/16/Oracle003/" title="oracle Professional003">
+                    <div class="nextTitle">oracle Professional003</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/07/30/Oracle001/" title="oracle Professional001">
+                    <div class="prevTitle">oracle Professional001</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:2578898518@qq.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/PinkamenaDianeLu" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/example_qr.png">
+                </span>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer qq" title="qq">
+                  
+                  <img class="profile-qr" src="/assets/qrcode_1548210605933.jpg">
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Oracle体系结构——002"><span class="toc-number">1.</span> <span class="toc-text">Oracle体系结构——002</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">Oracle参数文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.1.</span> <span class="toc-text">SPFILE与PFIE的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.2.</span> <span class="toc-text">如何查看数据库以哪种参数文件启动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.3.</span> <span class="toc-text">PFILE与SPFILE互相生成</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.</span> <span class="toc-text">动态参数与静态参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.1.</span> <span class="toc-text">修改spfile的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.2.</span> <span class="toc-text">判断参数的修改级别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.</span> <span class="toc-text">数据库启动阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.1.</span> <span class="toc-text">nomount阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.2.</span> <span class="toc-text">mount阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.3.</span> <span class="toc-text">open阶段</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.5.</span> <span class="toc-text">数据库的关闭</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.5.1.</span> <span class="toc-text">SHUTDOWN NORMAL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.5.2.</span> <span class="toc-text">SHUTDOWN TRANSACTIONAL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.5.3.</span> <span class="toc-text">SHUTDOWN IMMEDIATE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.5.4.</span> <span class="toc-text">SHUTDOWN ABORT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.5.5.</span> <span class="toc-text">STARTUP FORCE</span></a></li></ol></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 14
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/16</span><a class="archive-post-title" href="/2019/08/16/Oracle003/">oracle Professional003</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/14</span><a class="archive-post-title" href="/2019/08/14/Oracle002/">oracle Professional002</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/30</span><a class="archive-post-title" href="/2019/07/30/Oracle001/">oracle Professional001</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/20</span><a class="archive-post-title" href="/2019/03/20/A-superficial-analysis-of-oracle-01/">浅析oracle中的监听文件</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span><a class="archive-post-title" href="/2019/03/16/OperationsEngineer-oracle-02/">oracle表空间迁移</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/11</span><a class="archive-post-title" href="/2019/03/11/oracle103/">oracle103</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span><a class="archive-post-title" href="/2019/03/07/OperationsEngineer-oracle-01/">记录一次dmp导入数据库</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span><a class="archive-post-title" href="/2019/03/07/oracle101/">oracle101</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span><a class="archive-post-title" href="/2019/03/07/oracle102/">oracle102</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/15</span><a class="archive-post-title" href="/2019/02/15/softwareTesting3/">软件测试的基本方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/12</span><a class="archive-post-title" href="/2019/02/12/softwareTest2/">测试流程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/29</span><a class="archive-post-title" href="/2019/01/29/softwareTesting_1/">测试人员</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/24</span><a class="archive-post-title" href="/2019/01/24/skm/">微信收款码</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/24</span><a class="archive-post-title" href="/2019/01/24/skm2/">支付宝收款码</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="oracleABC"><span class="iconfont-archer">&#xe606;</span>oracleABC</span>
+    
+        <span class="sidebar-tag-name" data-tags="Superficial analysis"><span class="iconfont-archer">&#xe606;</span>Superficial analysis</span>
+    
+        <span class="sidebar-tag-name" data-tags="O&S"><span class="iconfont-archer">&#xe606;</span>O&S</span>
+    
+        <span class="sidebar-tag-name" data-tags="skm"><span class="iconfont-archer">&#xe606;</span>skm</span>
+    
+        <span class="sidebar-tag-name" data-tags="softwareTesting"><span class="iconfont-archer">&#xe606;</span>softwareTesting</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Mrlu"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
